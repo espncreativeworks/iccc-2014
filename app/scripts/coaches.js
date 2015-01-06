@@ -187,7 +187,7 @@ jQuery(document).ready(function($){
     var $this = $(this)
       , coachId = $this.parents('.ballot-item-container').attr('data-nominee-id')
       , data = $.cookie('iccc') || {}
-      , expiration = new Date(window.ballot.promo.endDate);
+      , expiration = new Date(window.ballot.endDate);
     
 
     if (typeof data.favorites === 'undefined'){
@@ -205,7 +205,7 @@ jQuery(document).ready(function($){
     var $this = $(this)
       , coachId = $this.parents('.ballot-item-container').attr('data-nominee-id')
       , data = $.cookie('iccc') || {}
-      , expiration = new Date(window.ballot.promo.endDate)
+      , expiration = new Date(window.ballot.endDate)
     ;
     
     if (typeof data.coachIds === 'undefined'){

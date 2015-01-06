@@ -32,7 +32,7 @@ jQuery(document).ready(function($){
     debug.dir(ballot);  
     
     initCountdown(new Date(_ballot.endedAt));
-    //initMasthead();
+    initMasthead();
     initVisualization("1");
     //initVotingClosedModal();
     //return $(document).trigger({ type: 'ballotrendered' });
@@ -99,7 +99,7 @@ jQuery(document).ready(function($){
     data.lastVisit = Date.now();
     $.cookie('iccc', data, expiration);
     
-    $('[data-target="#masthead-carousel"][data-toggle="collapse"]').one('click', function(){
+    $('[data-target="#masthead-carousel"][data-toggle="collapse"]').on('click', function(){
       return disableCollapse({ showTarget: false });
     });
     
