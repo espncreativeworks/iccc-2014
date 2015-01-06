@@ -1,0 +1,1393 @@
+[{
+  "thumbnail": {
+    "base": "grant_anthony.png",
+    "hires": "grant_anthony_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "alabama",
+      "full": "Alabama",
+      "abbrev": "bama"
+    }
+  },
+  "_id": 1,
+  "name": {
+    "sort": "grant-anthony",
+    "last": "Grant",
+    "first": "Anthony"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Boys & Girls Clubs of West Alabama provide programs that enable kids to reach their full potential as productive, caring, responsible citizens.",
+    "name": {
+      "sort": "boys-and-girls-clubs-of-west-alabama",
+      "full": "Boys & Girls Clubs of West Alabama",
+      "abbrev": "Boys & Girls Clubs of W. Alabama"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "miller_sean.png",
+    "hires": "miller_sean_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "arizona",
+      "full": "Arizona",
+      "abbrev": "zona"
+    }
+  },
+  "_id": 2,
+  "name": {
+    "sort": "miller-sean",
+    "last": "Miller",
+    "first": "Sean"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Ronald McDonald House Charities of Southern Arizona serves families with seriously ill children by providing a \"home away from home\" to improve well-being.",
+    "name": {
+      "sort": "ronald-mcdonald-house-charities-of-southern-arizona",
+      "full": "Ronald McDonald House Charities of Southern Arizona",
+      "abbrev": "Ronald McDonald House Charities of S. Arizona"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "anderson_mike.png",
+    "hires": "anderson_mike_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "arkansas",
+      "full": "Arkansas",
+      "abbrev": "ark"
+    }
+  },
+  "_id": 3,
+  "name": {
+    "sort": "anderson-mike",
+    "last": "Anderson",
+    "first": "Mike"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "The NWA Food Bank partners with 160 local pantries to provide food to over 450,000 hungry people annually.",
+    "name": {
+      "sort": "northwest-arkansas-food-bank",
+      "full": "Northwest Arkansas Food Bank",
+      "abbrev": "NWA Food Bank"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "drew_scott.png",
+    "hires": "drew_scott_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "baylor",
+      "full": "Baylor",
+      "abbrev": "bay"
+    }
+  },
+ "_id": 4,
+  "name": {
+    "sort": "drew-scott",
+    "last": "Drew",
+    "first": "Scott"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "This scholarship supports Baylor University's student-athletes participating in the men's basketball program.",
+    "name": {
+      "sort": "scott-and-kelly-drew-endowed-scholarship",
+      "full": "Scott and Kelly Drew Endowed Scholarship",
+      "abbrev": "skdes"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "boyle_tad.png",
+    "hires": "boyle_tad_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "colorado",
+      "full": "Colorado",
+      "abbrev": "cu"
+    }
+  },
+  "_id": 5,
+  "name": {
+    "sort": "boyle-tad",
+    "last": "Boyle",
+    "first": "Tad"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Providing temporary lodging for families traveling to Denver for their child's medical treatment.",
+    "name": {
+      "sort": "ronald-mcdonald-house-charities-of-denver",
+      "full": "Ronald McDonald House Charities of Denver",
+      "abbrev": "rmhc denver"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "ollie_kevin.png",
+    "hires": "ollie_kevin_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "connecticut",
+      "full": "Connecticut",
+      "abbrev": "uconn"
+    }
+  },
+  "_id": 6,
+  "name": {
+    "sort": "ollie-kevin",
+    "last": "Ollie",
+    "first": "Kevin"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Neag Comprehensive Cancer Center provides expert care and pursues new discoveries in cancer prevention and treatment.",
+    "name": {
+      "sort": "neag-comprehensive-cancer-center-at-uconn",
+      "full": "Neag Comprehensive Cancer Center at UConn",
+      "abbrev": "neag ccc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "krzyzewski_mike.png",
+    "hires": "krzyzewski_mike_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "duke",
+      "full": "Duke",
+      "abbrev": "duke"
+    }
+  },
+  "_id": 7,
+  "name": {
+    "sort": "krzyzewski-mike",
+    "last": "Krzyzewski",
+    "first": "Mike"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Emily Krzyzewski Center's mission is to inspire economically disadvantaged students to strive for excellence in all things.",
+    "name": {
+      "sort": "emily-krzyzewski-center",
+      "full": "Emily Krzyzewski Center",
+      "abbrev": "ekc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "donovan_billy.png",
+    "hires": "donovan_billy_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "florida",
+      "full": "Florida",
+      "abbrev": "uf"
+    }
+  },
+  "_id": 8,
+  "name": {
+    "sort": "donovan-billy",
+    "last": "Donovan",
+    "first": "Billy"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Sebastian Ferrero Foundation advocates for change in the way hospitals and healthcare professionals care for children and their families.",
+    "name": {
+      "sort": "sebastian-ferrero-foundation",
+      "full": "Sebastian Ferrero Foundation",
+      "abbrev": "sff"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "hamilton_leonard.png",
+    "hires": "hamilton_leonard_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "florida-state",
+      "full": "Florida State",
+      "abbrev": "fsu"
+    }
+  },
+  "_id": 9,
+  "name": {
+    "sort": "hamilton-leonard",
+    "last": "Hamilton",
+    "first": "Leonard"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "thompson_iii_john.png",
+    "hires": "thompson_iii_john_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "georgetown",
+      "full": "Georgetown",
+      "abbrev": "gu"
+    }
+  },
+  "_id": 10,
+  "name": {
+    "sort": "thompson-iii-john",
+    "last": "Thompson III",
+    "first": "John"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "SOME offers a comprehensive, holistic approach to caring for the homeless and extremely poor of the District.",
+    "name": {
+      "sort": "some-_so-others-might-eat_",
+      "full": "SOME (So Others Might Eat)",
+      "abbrev": "some"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "fox_mark.png",
+    "hires": "fox_mark_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "georgia",
+      "full": "Georgia",
+      "abbrev": "uga"
+    }
+  },
+  "_id": 11,
+  "name": {
+    "sort": "fox-mark",
+    "last": "Fox",
+    "first": "Mark"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "gregory_brian.png",
+    "hires": "gregory_brian_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "georgia-tech",
+      "full": "Georgia Tech",
+      "abbrev": "gt"
+    }
+  },
+  "_id": 12,
+  "name": {
+    "sort": "gregory-brian",
+    "last": "Gregory",
+    "first": "Brian"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Camp Twin Lakes provides year-round camp experiences for kids with serious illnesses and other life challenges.",
+    "name": {
+      "sort": "camp-twin-lakes",
+      "full": "Camp Twin Lakes",
+      "abbrev": "ctl"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "few_mark.png",
+    "hires": "few_mark_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "gonzaga",
+      "full": "Gonzaga",
+      "abbrev": "gu"
+    }
+  },
+  "_id": 13,
+  "name": {
+    "sort": "few-mark",
+    "last": "Few",
+    "first": "Mark"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "dickey_james.png",
+    "hires": "dickey_james_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "houston",
+      "full": "Houston",
+      "abbrev": "uh"
+    }
+  },
+  "_id": 14,
+  "name": {
+    "sort": "dickey-james",
+    "last": "Dickey",
+    "first": "James"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "crean_tom.png",
+    "hires": "crean_tom_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "indiana",
+      "full": "Indiana",
+      "abbrev": "iu"
+    }
+  },
+  "_id": 15,
+  "name": {
+    "sort": "crean-tom",
+    "last": "Crean",
+    "first": "Tom"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "TBF delivers backpacks filled with games, toys and activities to every child diagnosed with cancer in Indiana.",
+    "name": {
+      "sort": "tatums-bags-of-fun",
+      "full": "Tatum's Bags of Fun",
+      "abbrev": "tbf"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "mccaffery_fran.png",
+    "hires": "mccaffery_fran_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "iowa",
+      "full": "Iowa",
+      "abbrev": "iu"
+    }
+  },
+  "_id": 16,
+  "name": {
+    "sort": "mccaffery-fran",
+    "last": "McCaffery",
+    "first": "Fran"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "hoiberg_fred.png",
+    "hires": "hoiberg_fred_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "iowa-state",
+      "full": "Iowa State",
+      "abbrev": "isu"
+    }
+  },
+  "_id": 17,
+  "name": {
+    "sort": "hoiberg-fred",
+    "last": "Hoiberg",
+    "first": "Fred"
+  },
+  "votes": 0,
+  "active": true,
+  "donation": 33500,
+  "charity": {
+    "description": "Building healthier lives free of heart disease and stroke. Coach Hoiberg chairs the Central Iowa Heart Walk.",
+    "name": {
+      "sort": "american-heart-association",
+      "full": "American Heart Association",
+      "abbrev": "AHA"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "self_bill.png",
+    "hires": "self_bill_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "kansas",
+      "full": "Kansas",
+      "abbrev": "ku"
+    }
+  },
+  "_id": 18,
+  "name": {
+    "sort": "self-bill",
+    "last": "Self",
+    "first": "Bill"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Assists Foundation helps provide young people with access to better lives.",
+    "name": {
+      "sort": "assists-foundation",
+      "full": "Assists Foundation",
+      "abbrev": "af"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "weber_bruce.png",
+    "hires": "weber_bruce_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "kansas-state",
+      "full": "Kansas State",
+      "abbrev": "ksu"
+    }
+  },
+  "_id": 19,
+  "name": {
+    "sort": "weber-bruce",
+    "last": "Weber",
+    "first": "Bruce"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "turgeon_mark.png",
+    "hires": "turgeon_mark_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "maryland",
+      "full": "Maryland",
+      "abbrev": "um"
+    }
+  },
+  "_id": 20,
+  "name": {
+    "sort": "turgeon-mark",
+    "last": "Turgeon",
+    "first": "Mark"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "The world's leading voluntary health organization in Alzheimer's care, support and research.",
+    "name": {
+      "sort": "alzheimers-association",
+      "full": "Alzheimer's Association",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "pastner_josh.png",
+    "hires": "pastner_josh_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "memphis",
+      "full": "Memphis",
+      "abbrev": "um"
+    }
+  },
+  "_id": 21,
+  "name": {
+    "sort": "pastner-josh",
+    "last": "Pastner",
+    "first": "Josh"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "St. Jude is leading the way the world understands, treats and defeats childhood cancer and other diseases.",
+    "name": {
+      "sort": "st-jude-childrens-research-hospital",
+      "full": "St. Jude Children's Research Hospital",
+      "abbrev": "sjcrh"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "larranaga_jim.png",
+    "hires": "larranaga_jim_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "miami",
+      "full": "Miami",
+      "abbrev": "mia"
+    }
+  },
+  "_id": 22,
+  "name": {
+    "sort": "larranaga-jim",
+    "last": "Larranaga",
+    "first": "Jim"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "JDRF's mission is to improve the lives of those living with type 1 diabetes until we find a cure.",
+    "name": {
+      "sort": "jdrf",
+      "full": "JDRF",
+      "abbrev": "jdrf"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "beilein_john.png",
+    "hires": "beilein_john_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "michigan",
+      "full": "Michigan",
+      "abbrev": "um"
+    }
+  },
+  "_id": 23,
+  "name": {
+    "sort": "beilein-john",
+    "last": "Beilein",
+    "first": "John"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "St. Louis Center is a residential, family living and learning environment for children and adults with intellectual and developmental disabilities.",
+    "name": {
+      "sort": "st-louis-center",
+      "full": "St. Louis Center",
+      "abbrev": "STL Center"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "izzo_tom.png",
+    "hires": "izzo_tom_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "michigan-state",
+      "full": "Michigan State",
+      "abbrev": "msu"
+    }
+  },
+  "_id": 24,
+  "name": {
+    "sort": "izzo-tom",
+    "last": "Izzo",
+    "first": "Tom"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Volunteers of America Michigan provides 13 homeless service programs and 675 low-income housing units to veterans and disabled across Michigan.",
+    "name": {
+      "sort": "volunteers-of-america-michigan",
+      "full": "Volunteers of America Michigan",
+      "abbrev": "VOA Michigan"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "pitino_richard.png",
+    "hires": "pitino_richard_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "minnesota",
+      "full": "Minnesota",
+      "abbrev": "minn"
+    }
+  },
+  "_id": 25,
+  "name": {
+    "sort": "pitino-richard",
+    "last": "Pitino",
+    "first": "Richard"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "The DPF benefits underpriviliged and handicapped children & other charitable causes approved by its board.",
+    "name": {
+      "sort": "daniel-pitino-foundation",
+      "full": "Daniel Pitino Foundation",
+      "abbrev": "dpf"
+    }
+ }
+}, {
+  "thumbnail": {
+    "base": "haith_frank.png",
+    "hires": "haith_frank_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "missouri",
+      "full": "Missouri",
+      "abbrev": "miss"
+    }
+  },
+  "_id": 26,
+  "name": {
+    "sort": "haith-frank",
+    "last": "Haith",
+    "first": "Frank"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Boys & Girls Club of Columbia, MO offers kids a safe place to learn and grow, all while having fun.",
+    "name": {
+      "sort": "boys-and-girls-clubs-_-columbia-mo",
+      "full": "Boys & Girls Clubs - Columbia, MO",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "prohm_steve.png",
+    "hires": "prohm_steve_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "murray-state",
+      "full": "Murray State",
+      "abbrev": "murray st."
+    }
+  },
+  "_id": 27,
+  "name": {
+    "sort": "prohm-steve",
+    "last": "Prohm",
+    "first": "Steve"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "The V Foundation, formed by ESPN and Jim Valvano with the mission of finding a cure for cancer by funding essential cancer research.",
+    "name": {
+      "sort": "the-v-foundation",
+      "full": "The V Foundation",
+      "abbrev": "V"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "williams_roy.png",
+    "hires": "williams_roy_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "north-carolina",
+      "full": "North Carolina",
+      "abbrev": "nc"
+    }
+  },
+  "_id": 28,
+  "name": {
+    "sort": "williams-roy",
+    "last": "Williams",
+    "first": "Roy"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "UNC Lineberger Comprehensive Cancer Center supports UNC's top-ranked cancer center, known for innovation, collaboration and patient-centered care.",
+    "name": {
+      "sort": "unc-lineberger-comprehensive-cancer-center",
+      "full": "UNC Lineberger Comprehensive Cancer Center",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "gottfried_mark.png",
+    "hires": "gottfried_mark_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "north-carolina-state",
+      "full": "North Carolina State",
+      "abbrev": "nc state"
+    }
+  },
+  "_id": 29,
+  "name": {
+    "sort": "gottfried-mark",
+    "last": "Gottfried",
+    "first": "Mark"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "The V Foundation, formed by ESPN and Jim Valvano with the mission of finding a cure for cancer by funding essential cancer research.",
+    "name": {
+      "sort": "the-v-foundation",
+      "full": "The V Foundation",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "brey_mike.png",
+    "hires": "brey_mike_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "notre-dame",
+      "full": "Notre Dame",
+      "abbrev": "nd"
+    }
+  },
+  "_id": 30,
+  "name": {
+    "sort": "brey-mike",
+    "last": "Brey",
+    "first": "Mike"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "matta_thad.png",
+    "hires": "matta_thad_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "ohio-state",
+      "full": "Ohio State",
+      "abbrev": "osu"
+    }
+  },
+  "_id": 31,
+  "name": {
+    "sort": "matta-thad",
+    "last": "Matta",
+    "first": "Thad"
+  },
+  "votes": 0,
+  "active": true,
+  "donation": 33500,
+  "charity": {
+    "description": "Ronald McDonald House Charities of Central Ohio serves families with seriously ill children by providing a \"home away from home\" to improve well-being.",
+    "name": {
+      "sort": "ronald-mcdonald-house-charities-of-central-ohio",
+     "full": "Ronald McDonald House Charities of Central Ohio",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "ford_travis.png",
+    "hires": "ford_travis_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "oklahoma-state",
+      "full": "Oklahoma State",
+      "abbrev": "oksu"
+    }
+  },
+  "_id": 32,
+  "name": {
+    "sort": "ford-travis",
+    "last": "Ford",
+    "first": "Travis"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Big Brothers Big Sisters of Stillwater provides professionally supported one-to-one mentoring to change the lives of children for the better, forever.",
+    "name": {
+      "sort": "big-brothers-big-sisters-of-stillwater",
+      "full": "Big Brothers Big Sisters of Stillwater",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "dixon_jamie.png",
+    "hires": "dixon_jamie_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "pittsburgh",
+      "full": "Pittsburgh",
+      "abbrev": "pitt"
+    }
+  },
+  "_id": 33,
+  "name": {
+    "sort": "dixon-jamie",
+    "last": "Dixon",
+    "first": "Jamie"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Maggie Dixon Foundation's mission is to prevent sudden cardiac death due to acquired and inherited heart disorders.",
+    "name": {
+      "sort": "maggie-dixon-foundation",
+      "full": "Maggie Dixon Foundation",
+      "abbrev": "mdf"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "painter_matt.png",
+    "hires": "painter_matt_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "purdue",
+      "full": "Purdue",
+      "abbrev": "purdue"
+    }
+  },
+  "_id": 34,
+  "name": {
+    "sort": "painter-matt",
+    "last": "Painter",
+    "first": "Matt"
+  },
+  "votes": 0,
+  "active": true,
+  "donation": 33500,
+  "charity": {
+    "description": "The Smith Family BReaK Thru Fund was founded to fund research to fight Niemann-Pick Type C Disease.",
+    "name": {
+      "sort": "smith-family-break-thru-fund",
+      "full": "Smith Family BReaK Thru Fund",
+      "abbrev": "sfbtf"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "lavin_steve.png",
+    "hires": "lavin_steve_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "st-johns",
+      "full": "St. John's",
+      "abbrev": "sju"
+    }
+  },
+  "_id": 35,
+  "name": {
+    "sort": "lavin-steve",
+    "last": "Lavin",
+    "first": "Steve"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "martelli_phil.png",
+    "hires": "martelli_phil_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "saint-josephs",
+      "full": "Saint Joseph's",
+      "abbrev": ""
+    }
+  },
+  "_id": 36,
+  "name": {
+    "sort": "martelli-phil",
+    "last": "Martelli",
+    "first": "Phil"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "brown_larry.png",
+    "hires": "brown_larry_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "smu",
+      "full": "SMU",
+      "abbrev": "smu"
+    }
+  },
+  "_id": 37,
+  "name": {
+    "sort": "brown-larry",
+    "last": "Brown",
+    "first": "Larry"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Dragonfly Forest, a year-round program for children with autism & medical needs, offering free summer camp & after-school programs.",
+    "name": {
+      "sort": "dragonfly-forest",
+      "full": "Dragonfly Forest",
+      "abbrev": "df"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "dawkins_johnny.png",
+    "hires": "dawkins_johnny_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "stanford",
+      "full": "Stanford",
+      "abbrev": "stan"
+    }
+  },
+  "_id": 38,
+  "name": {
+    "sort": "dawkins-johnny",
+    "last": "Dawkins",
+    "first": "Johnny"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Boys and Girls Club of the Peninsula, a youth development organization devoted to providing a broad range of programs to guide youth of the Bay Area Peninsula.",
+    "name": {
+      "sort": "boys-and-girls-club-of-the-peninsula",
+      "full": "Boys & Girls Club of the Peninsula",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "boeheim_jim.png",
+    "hires": "boeheim_jim_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "syracuse",
+      "full": "Syracuse",
+      "abbrev": "'cuse"
+    }
+  },
+  "_id": 39,
+  "name": {
+    "sort": "boeheim-jim",
+    "last": "Boeheim",
+    "first": "Jim"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Jim and Juli Boeheim Foundation strives to enrich the lives of kids in need within Central New York and provide support for eliminating cancer.",
+    "name": {
+      "sort": "jim-and-juli-boeheim-foundation",
+      "full": "Jim and Juli Boeheim Foundation",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "dunphy_fran.png",
+    "hires": "dunphy_fran_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "temple",
+      "full": "Temple",
+      "abbrev": "temp"
+    }
+  },
+  "_id": 40,
+  "name": {
+    "sort": "dunphy-fran",
+    "last": "Dunphy",
+    "first": "Fran"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Big Brothers Big Sisters Southeastern PA empowers children to fulfill their potential through safe, one-to-one mentoring relationships.",
+    "name": {
+      "sort": "big-brothers-big-sisters-southeastern-pa",
+      "full": "Big Brothers Big Sisters Southeastern PA",
+      "abbrev": "bbbs"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "martin_cuonzo.png",
+    "hires": "martin_cuonzo_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "tennessee",
+      "full": "Tennessee",
+      "abbrev": "tenn"
+    }
+  },
+  "_id": 41,
+  "name": {
+    "sort": "martin-cuonzo",
+    "last": "Martin",
+    "first": "Cuonzo"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "The First Tee of Greater Knoxville impacts the lives of youth through core values and the game of golf.",
+    "name": {
+      "sort": "the-first-tee-of-greater-knoxville",
+      "full": "The First Tee of Greater Knoxville",
+      "abbrev": "tft"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "smith_tubby.png",
+    "hires": "smith_tubby_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "texas-tech",
+      "full": "Texas Tech",
+      "abbrev": "ttu"
+    }
+  },
+  "_id": 42,
+  "name": {
+    "sort": "smith-tubby",
+    "last": "Smith",
+    "first": "Tubby"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": ""
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "alford_steve.png",
+    "hires": "alford_steve_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "ucla",
+      "full": "UCLA",
+      "abbrev": "ucla"
+    }
+  },
+  "_id": 43,
+  "name": {
+    "sort": "alford-steve",
+    "last": "Alford",
+    "first": "Steve"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Provides year-round sports training and competition for children and adults with intellectual disabilities.",
+    "name": {
+      "sort": "special-olympics",
+      "full": "Special Olympics",
+      "abbrev": "so"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "enfield_andy.png",
+    "hires": "enfield_andy_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "usc",
+      "full": "USC",
+      "abbrev": "usc"
+    }
+  },
+  "_id": 44,
+  "name": {
+    "sort": "enfield-andy",
+    "last": "Enfield",
+    "first": "Andy"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 1000,
+  "charity": {
+    "description": "Coaches vs. Cancer provides critical mission outreach, while raising funds to support ACS's lifesaving research, education, advocacy and service.",
+    "name": {
+      "sort": "coaches-vs-cancer",
+      "full": "Coaches vs. Cancer",
+      "abbrev": "cvc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "smart_shaka.png",
+    "hires": "smart_shaka_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "vcu",
+      "full": "VCU",
+      "abbrev": "vcu"
+    }
+  },
+  "_id": 45,
+  "name": {
+    "sort": "smart-shaka",
+    "last": "Smart",
+    "first": "Shaka"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "FRIENDS Association for Children offers childcare, early childhood education, and school-age music & arts programs for at-risk children in central VA.",
+    "name": {
+      "sort": "friends-association-for-children",
+      "full": "FRIENDS Association for Children",
+      "abbrev": "fafc"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "wright_jay.png",
+    "hires": "wright_jay_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "villanova",
+      "full": "Villanova",
+      "abbrev": "vill"
+    }
+  },
+  "_id": 46,
+  "name": {
+    "sort": "wright-jay",
+    "last": "Wright",
+    "first": "Jay"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 8500,
+  "charity": {
+    "description": "Augustinian Fund supports the Augustinian friars of the Province of St. Thomas of Villanova.",
+    "name": {
+      "sort": "augustinian-fund",
+      "full": "Augustinian Fund",
+      "abbrev": "af"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "huggins_bob.png",
+    "hires": "huggins_bob_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "west-virginia",
+      "full": "West Virginia",
+      "abbrev": "wvu"
+    }
+  },
+  "_id": 47,
+  "name": {
+    "sort": "huggins-bob",
+    "last": "Huggins",
+    "first": "Bob"
+  },
+  "votes": 0,
+  "active": false,
+  "donation": 18500,
+  "charity": {
+    "description": "Norma Mae Huggins Cancer Research Endowment Fund, a cancer research endowment dedicated on behalf of Coach Bob Huggins's mother.",
+    "name": {
+      "sort": "norma-mae-huggins-cancer-research-endowment-fund",
+      "full": "Norma Mae Huggins Cancer Research Endowment Fund",
+      "abbrev": "nmhcref"
+    }
+  }
+}, {
+  "thumbnail": {
+    "base": "marshall_gregg.png",
+    "hires": "marshall_gregg_2x.png"
+  },
+  "school": {
+    "name": {
+      "sort": "wichita-state",
+      "full": "Wichita State",
+      "abbrev": "wsu"
+    }
+  },
+  "_id": 48,
+  "name": {
+    "sort": "marshall-gregg",
+    "last": "Marshall",
+    "first": "Gregg"
+  },
+  "votes": 0,
+  "active": true,
+  "donation": 33500,
+  "charity": {
+    "description": "The Wichita Children's Home offers emergency, temporary residential shelter for children in our community.",
+    "name": {
+      "sort": "wichita-childrens-home",
+      "full": "Wichita Children's Home",
+      "abbrev": "wch"
+    }
+  }
+}]

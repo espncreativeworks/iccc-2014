@@ -1,0 +1,143 @@
+.masthead {
+  float: left;
+  clear: left;
+  width: 100%;
+  background-color: #f6dfb5;
+  background-image: url($image-path + "bg_carousel.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 6px solid $ccc-white; 
+  
+  .carousel {
+    
+    .carousel-control {
+      display: none;
+    }
+    
+    .item {
+      padding: 20px;
+      height: 375px;
+      
+      @media (max-width: $screen-sm-max){
+        height: 325px;
+      }
+    }
+  }
+  
+  .video-player {
+    width: 560px;
+    height: 315px;
+    padding: 10px 0;
+    
+    @media (max-width: $screen-sm-max){
+      width: 100%;
+      height: auto;
+      padding: 0px;
+    }
+    
+    .video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  .copy-container {
+    text-align: left;
+    font-size: 13px;
+    line-height: 15px;
+    
+    .title-copy {
+      margin-top: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    
+    p {
+      margin-bottom: 3px;
+    }
+    
+    a {
+      font-weight: bold;
+      color: $gray-dark !important;
+      
+      &:hover,
+      &:active {
+        color: $gray-dark !important;
+        text-decoration: none;
+      }
+    }
+    
+    @media (max-width: $screen-sm-max){
+      font-size: 10px;
+    }
+  }
+  
+  .controls-container {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    
+    .control {
+      width: 162px;
+      height: 29px;
+      line-height: 29px;
+    }
+  }
+  
+  .infographic-container {
+    padding-bottom: 10px;
+    height: 100%;
+    
+    .infographic {
+      width: 90%;
+      height: 90%;
+      margin: 0 auto;
+      background-image: url($image-path + 'infographic.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  
+}
+
+html.lt-ie9 .masthead {
+  @include gradient-directional(lighten(#f6dfb5, 15%), #f6dfb5, 45deg);
+  background-repeat: repeat;
+}
+
+.collapse-controls {
+  padding-bottom: 20px;
+  
+  .collapse-control {
+    width: 142px;
+    height: 18px;
+    margin: 0 auto;
+    line-height: 18px;
+    background-color: transparent;
+    background-image: url($image-path + 'bg_masthead_collapse_control.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+    [data-control-action="toggle-collapse"]{
+      display: block;
+      width: 50%;
+      height: 100%;
+      margin: 0 auto;
+      color: $ccc-grey-blue;
+      line-height: 100%;
+      
+      &:hover {
+        background-color: transparent;
+        color: $ccc-light-grey;
+      }
+    }
+  }
+  
+  @media (max-width: $screen-sm-max){
+    background-image: url($image-path + 'bg_carousel.jpg');
+    background-repeat: repeat;
+  }
+}

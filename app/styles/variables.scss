@@ -1,0 +1,79 @@
+//
+// Custom Variables
+// --------------------------------------------------
+
+// Fonts
+// --------------------------------------------------
+$ccc-adelle-sans-font-family: 'adelle-sans';
+$ccc-acta-display-font-family: 'acta-display';
+$ccc-jaf-bernina-font-family: 'jaf-bernina-sans-condensed';
+$ccc-scoreboard-font-family: 'Scoreboard';
+$ccc-didot-font-family: 'Didot 24 A', 'Didot 24 B';
+$ccc-meta-pro-font-family: 'Infiniti Meta Pro';
+$ccc-meta-pro-book-font-family: $ccc-meta-pro-font-family + ' Book';
+$ccc-meta-pro-black-font-family: $ccc-meta-pro-font-family + ' Black';
+
+$ccc-font-family-sans-serif: $ccc-meta-pro-book-font-family;
+$ccc-headings-font-family: $ccc-didot-font-family;
+$ccc-alt-font-family: $ccc-jaf-bernina-font-family;
+$ccc-display-font-family: $ccc-scoreboard-font-family;
+
+// Brand Colors
+// --------------------------------------------------
+$ccc-transparent: rgba(0,0,0,0.0);
+$ccc-white: #fff;
+$ccc-grey: #afb2b4; 
+$ccc-light-grey: #cacaca;
+$ccc-turquoise: #2fc49f;
+$ccc-dark-navy: #1a2227;
+$ccc-grey-blue: #4b5860;
+$ccc-primary: $ccc-dark-navy;
+$ccc-accent: $ccc-grey-blue; 
+$ccc-html-bg: #f0f3f8;
+$ccc-header-bg: #cad1d6;
+$ccc-body-gradient-start: #b8bec4;
+$ccc-body-gradient-end: $ccc-html-bg;
+$ccc-countdown-color: #b3babf;
+
+
+// Links
+// --------------------------------------------------
+$ccc-link-color: $ccc-white !default;
+$ccc-link-hover-color: $ccc-accent !default;
+
+
+// Navbar
+// --------------------------------------------------
+$ccc-navbar-default-bg: $ccc-dark-navy;
+
+
+// Buttons
+// --------------------------------------------------
+$ccc-btn-default-color: $ccc-white !default;
+$ccc-btn-default-bg: $ccc-grey !default;
+$ccc-btn-default-border: $ccc-transparent !default;
+
+$ccc-btn-primary-color: $ccc-white !default;
+$ccc-btn-primary-bg: $ccc-primary !default;
+$ccc-btn-primary-border: $ccc-btn-default-border;
+
+
+// Carousel
+// --------------------------------------------------
+$ccc-carousel-indicator-border-color: $ccc-accent;
+$ccc-carousel-indicator-active-bg: $ccc-accent;
+
+// Pagination
+// -------------------------
+
+$pagination-bg:                        $ccc-primary !default;
+$pagination-border:                    $ccc-light-grey !default;
+$pagination-color:                     $ccc-white !default;
+
+$pagination-hover-bg:                  $ccc-light-grey !default;
+$pagination-hover-color:               $ccc-primary !default;
+
+$pagination-active-bg:                 $ccc-accent !default;
+$pagination-active-color:              $ccc-white !default;
+
+$pagination-disabled-color:            lighten($ccc-primary, 15%) !default;

@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script> 
+      var ids = [], coaches = [];
+      var settings = {
+        url: 'http://iccc-admin.herokuapp.com/api/coaches',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+          active: 1
+        }, 
+        cache: false,
+        success: function(data){
+          $.each(data, function(index) {
+            ids.push(data[index]._id);
+            coaches.push(data[index].name.first + " " + data[index].name.last); 
+          });
+          console.log("ids: ", ids)
+          console.log("coahces: ", coaches)
+        },
+        error: function(jqXhr, textStatus, errorThrown){
+          return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
+        }
+      };
+    </script>
+  </body>
+</html>

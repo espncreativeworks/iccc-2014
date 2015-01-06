@@ -1,0 +1,306 @@
+$navbar-link-font-family: $ccc-didot-font-family;
+
+.header {
+  background-color: $ccc-header-bg;
+  background-image: none;
+  
+  .title-container {
+    text-transform: uppercase;
+    line-height: auto;
+    
+    .logo-container {
+      width: 76%;
+      height: 92px;
+      margin: 0 auto;
+      
+      @media (max-width: $screen-sm-max){
+        width: 90%;
+        height: 112px;
+      }
+      
+      .logo {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-image: url($image-path + 'logo_iccc.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    
+    .title-copy {
+      font-size: 34px;
+      line-height: 34px;
+      margin: 0;
+      
+      &.small {
+        font-size: 18px;
+        line-height: 18px;
+        
+        @media (max-width: $screen-sm-max){
+          font-size: 12px;
+          line-height: 12px;
+        }
+        
+        @media (max-width: $screen-xs-max){
+          font-size: 9px;
+          line-height: 9px;
+        }
+      }
+      
+      &.nowrap {
+        white-space: nowrap;
+      }
+      
+      @media (max-width: $screen-sm-max){
+        font-size: 24px;
+        line-height: 24px;
+      }
+      
+      @media (max-width: $screen-xs-max){
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+  
+  .lockup-container {
+    
+    .logos { padding-bottom: 12px; }
+    
+    .logo-container {
+      height: 60px;
+      width: 100%;
+      border-left: 1px solid $ccc-grey;
+      
+      .logo {
+        width: 90%;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      &.infiniti { border: none; }
+      &.infiniti .logo { height: 60px; background-image: url($image-path + 'logo_infiniti.png'); }
+      &.ncaa .logo { height: 60px; background-image: url($image-path + 'logo_ncaa.png'); }
+      &.nabc .logo { height: 60px; background-image: url($image-path + 'logo_nabc.png'); }
+      
+      @media (max-width: $screen-sm-max){
+        height: 50px;
+        
+        &.infiniti { 
+          padding-top: 5px;
+          padding-bottom: 5px;
+          .logo {
+            height: 40px;
+          }
+        }
+        &.ncaa, 
+        &.nabc {
+          .logo {
+            height: 50px;
+          }
+        }
+      }
+      
+      @media (max-width: $screen-xs-max){
+        height: 40px;
+        
+        &.infiniti { 
+          margin-bottom: 4px;
+          border-bottom: 1px solid $ccc-grey; 
+          padding-bottom: 0px;
+          .logo {
+            height: 30px;
+          }
+        }
+        &.ncaa {
+          border-left: none;
+        }
+        &.ncaa, 
+        &.nabc {
+          margin-top: 0px;
+          padding-top: 0px;
+          .logo {
+            width: 80%;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  
+  .title-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    @media (max-width: $screen-sm-max){
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    
+    @media (max-width: $screen-xs-max){
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+  }
+  
+  .lockup-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    @media (max-width: $screen-sm-max){
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    
+    @media (max-width: $screen-xs-max){
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+  }
+  
+  .legalese {
+    font-size: 8px;
+    font-weight: 400;
+  }
+  
+  .branding {
+    font-size: inherit;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: inherit;
+  }
+  
+  @media (max-width: $grid-float-breakpoint){
+    font-size: 35px;
+  }
+}
+
+.navbar {
+  
+  .social a {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: transparent !important;
+  
+    &.facebook { 
+      width: 14px;
+      height: 28px;
+      background-image: url($image-path + 'icon_facebook.png'); 
+    }
+  
+    &.twitter {
+      width: 30px;
+      height: 24px;
+      background-image: url($image-path + 'icon_twitter.png'); 
+    }
+  }
+  
+  &.hidden-xs {
+    float: left;
+    clear: both;
+    width: 100%;
+    border: none;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    height: 50px !important;
+    line-height: 50px !important;
+    background-color: $ccc-navbar-default-bg;
+    @include border-radius(0px);
+    
+    .navbar-nav {
+      float: none !important;
+      width: $screen-md-min;
+      height: inherit;
+      line-height: inherit;
+      
+      li {
+        width: auto;
+        height: inherit;
+        padding: 0px 10px;
+        border-right: 1px solid transparentize($ccc-light-grey, 0.5);
+        line-height: inherit;
+        text-align: center;
+        
+        a {
+          margin: 10px 15px;
+          padding: 0;
+          height: 30px;
+          line-height: 30px;
+          color: white;
+          font-family: $navbar-link-font-family;
+          font-size: 17px;
+          font-weight: 300;
+          font-style: normal;
+          text-transform: uppercase;
+          
+          &:hover,
+          &:active {
+            background-color: inherit;
+            color: $ccc-accent;
+          }
+          
+          @media (max-width: $screen-sm-max){
+            margin: 10px;
+            font-size: 15px;
+          }
+        }
+        
+        &.active a {
+          background-color: inherit;
+          border-bottom: 2px solid $ccc-accent;
+        }
+      }
+      
+      .countdown-container {
+        width: 165px;
+        border-right: none;
+        font-family: $ccc-font-family-sans-serif;
+        font-size: 10px;
+        line-height: 10px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $ccc-white;
+        
+        .labels {
+          padding-top: 3px;
+        }
+  
+        .countdown-label,
+        h4, h5, h6 {
+          font-family: inherit;
+          font-size: inherit;
+          line-height: inherit;
+          font-weight: inherit;
+          color: inherit;
+          margin: 3px 0px;
+          text-align: center;
+        }
+  
+        .countdown {
+          font-family: $ccc-display-font-family;
+          font-size: 22px;
+          line-height: 22px;
+          font-weight: normal;
+          color: $ccc-countdown-color;
+        }
+      }
+    }
+  }
+  
+  &.visible-xs {
+    .social a {
+      margin: 10px 15px;
+      padding: 0px;
+    }
+  }
+  
+  &.sticky.affix {
+    top: 0px;
+    z-index: 9999;
+  }
+}

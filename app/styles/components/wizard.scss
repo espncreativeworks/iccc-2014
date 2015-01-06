@@ -1,0 +1,75 @@
+html.wizard {
+  width: 100%;
+  min-height: 1200px;
+  @include gradient-vertical($ccc-body-gradient-start, $ccc-body-gradient-end);
+  
+  body {
+    position: relative;
+    min-height: inherit;
+    background: transparent;
+    background-image: none;
+  }
+  
+  #content-container {
+    padding-top: 40px;
+    
+    @media (max-width: $screen-sm-max){
+      padding-top: 0px;
+    }
+  }
+  
+  #thanks-content-container {
+    background-color: $ccc-white;
+  }
+  
+  #thanks-content-container,
+  #authentication-content-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+    @media (max-width: $screen-sm-max){
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  
+  
+  #footer-container {
+    position: absolute;
+    bottom: 0px;
+    margin-top: 0px;
+  }
+  
+  #optin-disclaimers.opted-out {
+    display: none;
+  }
+  
+  .form-action-controls {
+    padding-top: 24px;
+  }
+  
+  .page-title {
+    text-transform: uppercase;
+  }
+  
+  .hidden-wizard { display: none; }
+}
+
+html.no-rel {
+  
+  body#thanks #footer-container {
+    position: relative;
+    margin-top: -54px;
+  }
+  
+  .visible-no-rel { display: block; }
+}
+
+
+body.overlay {
+  .hidden-overlay { display: none; }
+}
+
+body.error {
+  .hidden-error { display: none; }
+}

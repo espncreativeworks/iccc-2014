@@ -1,0 +1,82 @@
+html {
+  background-color: $ccc-html-bg;
+}
+
+body {
+  @include gradient-vertical($ccc-body-gradient-start, $ccc-body-gradient-end);
+  @media (max-width: $screen-xs-max){
+    padding-top: 40px !important;
+  }
+  
+  &.loading {
+    @include opacity(0);
+    visibility: hidden;
+  }
+  
+  &.loaded {
+    visibility: visible;
+    @include opacity(1);
+    @include transition(opacity 1s ease-in-out 500ms);
+  }
+  font-family: "Infiniti Meta Pro Book","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+sup {
+  font-size: 50%;
+}
+
+.container.stretch {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  overflow-x: hidden;
+  
+  & > .row {
+    margin: 0px !important;
+  }
+}
+
+#desktop-content-container,
+#phone-content-container,
+#rules-content-container {
+  background-image: none;
+  background-color: $ccc-white;
+}
+
+#rules-content-container {
+  padding-bottom: 120px;
+}
+
+.no-purchase {
+  text-transform: uppercase;
+}
+
+.gutter-less {
+  @include gutter-less();
+}
+
+.float-less {
+  @include float-less();
+}
+
+.nowrap {
+  @include nowrap();
+}
+
+.template {
+  @include template();
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: $ccc-didot-font-family;
+  font-weight: 300;
+  line-height: 1.1;
+  color: inherit;
+}
+
+a {
+  color: #fff;
+}
+a:hover {
+  color: $ccc-light-grey;
+}

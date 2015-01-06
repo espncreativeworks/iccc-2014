@@ -1,0 +1,256 @@
+$label-font-family: $ccc-meta-pro-book-font-family;
+
+#desktop-content-container {
+  .toolbar-content {
+    //height: 113px;
+    padding-top: 28px;
+  
+    @media (max-width: $grid-float-breakpoint){
+      padding-top: 14px;    
+    }
+  }
+}
+
+.toolbar-content {
+  background-color: $ccc-white;
+  
+  h4, h5, h6 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+  }
+  
+  .sorting-content-container,
+  .visualization-content-container {
+    display: block;
+    width: 95%;
+  }
+
+  .info-label {
+    font-family: $label-font-family;
+    font-size: 13px;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    text-align: center;
+  
+    @media (max-width: $grid-float-breakpoint){
+      font-size: 23px;
+      line-height: 23px;
+      padding-top: 14px;
+      padding-bottom: 16px;
+      font-weight: 500;
+    }
+    
+    h4 {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      font-style: inherit;
+    }
+  }
+
+  .sorting-controls {
+    height: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    @include sorting-controls();
+  }
+
+  .visualization-container {
+  
+    .phase {
+      width: 100%;
+      height: 30px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0;
+      margin: 0;
+      
+      @media (max-width: $screen-sm-max){
+        font-size: 10px;
+        font-weight: 500;
+      }
+    }
+  
+    .label-container {
+      height: 20px;
+      font-size: inherit;
+      line-height: 14px;
+      font-weight: inherit;
+      color: $ccc-light-grey;
+      
+      &.text-smaller {
+        @media (max-width: $screen-md-max){
+          font-size: 7px;
+        }  
+      }
+    
+      .label-component {
+        display: inline-block;
+        font-family: $label-font-family;
+        font-weight: 300;
+      }
+    
+      .separator {
+        margin: 0 2px;
+      
+        @media (max-width: $screen-md-max){
+          margin: 0px;
+        }
+      }
+    
+    
+      & span:first-of-type {
+        text-indent: 5px;
+      
+        @media (max-width: $screen-sm-max){
+          text-indent: 0px;
+        }
+      }
+    }
+  
+    .visualization {
+      position: relative;
+      height: 10px;
+    
+      .indicator {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $ccc-primary;
+        @include border-radius(50%);
+        background-color: $ccc-light-grey;
+        
+        &.last {
+          right: -2px;
+          left: auto;
+        }
+      }
+    
+      .chain-link {
+        position: absolute;
+        float: none;
+        top: 2px;
+        left: 2px;
+        width: 100%;
+        height: 6px;
+        padding: 0;
+        background-color: $ccc-light-grey;
+        
+        &.last {
+          width: 98%;
+        }
+      }
+    }
+  
+    .phase.in-progress,
+    .phase.completed {
+      .label-container {
+        color: $ccc-primary;
+      }
+      .visualization {
+        .indicator,
+        .chain-link {
+          background-color: $ccc-accent;
+        }
+      }
+    }
+  }
+
+  #sorting-options-accordion {
+    background-color: transparent;
+    
+    .sorting-controls {
+      height: auto;
+    }
+  
+    .panel {
+      background-color: $ccc-primary;
+    
+      .panel-heading {
+        width: 100%;
+        height: 38px;
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 38px;
+        font-size: 18px;
+        background-color: inherit;
+        color: $ccc-white;
+      
+        .panel-title {
+          width: 100%;
+          height: inherit;
+          color: inherit;
+                  
+          [data-toggle="collapse"] {
+            display: block;
+            width: 100%;
+            height: inherit;
+            color: inherit;
+            text-align: center;
+          
+            &:hover,
+            &:active {
+              text-decoration: none;
+            }
+                      
+            span {
+              line-height: inherit;
+              color: inherit;
+            
+              &.control-text {
+                &.current-value {
+                  color: $ccc-accent;
+                  text-transform: uppercase;
+                }
+              }
+              &.caret {
+                margin-left: 20px;
+                border-top-color: $ccc-accent;
+              }
+            }
+          }
+        }
+      }
+      .panel-collapse {
+        .panel-body {
+          .nav-pills {
+            li {
+              a {
+              
+              }
+              &.active {
+                a {
+                  background-color: $ccc-accent; 
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+  } 
+  
+  &.affix {
+    top: 50px;
+    width: inherit;
+    z-index: 9999;
+    
+    @media (max-width: $screen-xs-max){
+      width: 100%;
+    }
+    
+    .divider {
+      margin-bottom: 0px;
+    }
+  }
+}

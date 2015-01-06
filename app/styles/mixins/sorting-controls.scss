@@ -1,0 +1,39 @@
+@mixin sorting-controls($asc: "asc", $desc: "desc"){
+  
+  .sorting-control {
+  
+    height: inherit;
+    line-height: inherit;
+    margin-bottom: 0px;
+  
+    [data-control-action="sort"]{
+      float: left;
+      width: 90%;
+      margin: 0 auto;
+      padding: 0px 14px;
+      line-height: inherit;
+      font-size: 11px;
+      @include border-radius(0px);
+  
+      .sort-direction-indicator {
+        display: none;
+        line-height: inherit;
+        font-size: 9px;
+      }
+  
+      &.selected {
+        &.#{$asc} {
+          & > .sort-direction-indicator.ascending {
+            display: inline-block;
+          }
+        }
+        &.#{$desc} {
+          & > .sort-direction-indicator.descending {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  
+}

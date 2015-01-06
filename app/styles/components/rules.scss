@@ -1,0 +1,45 @@
+$heading-font-family: $ccc-didot-font-family;
+$heading-border-color: $ccc-body-gradient-end;
+$sub-heading-font-family: $ccc-meta-pro-book-font-family;
+
+#rules-content-container { 
+  a {
+    color: $ccc-grey-blue;
+    
+    &:hover, 
+    &:active {
+      color: $ccc-light-grey;
+    } 
+  }
+  
+  .promo-title {
+    font-family: $heading-font-family;
+    text-transform: uppercase;
+  }
+  
+  .sub-heading {
+    font-family: $sub-heading-font-family;
+  }
+  
+  .content-heading {
+    text-transform: uppercase;
+  }
+  
+  .section-heading {
+    width: 60%;
+    padding-top: 20px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $heading-border-color;
+    
+    @media (max-width: $screen-xs-max){
+      width: 83%;
+    }
+  }
+}
+
+body#rules {
+  .masthead,
+  .collapse-controls { 
+    display: none; 
+  }
+}

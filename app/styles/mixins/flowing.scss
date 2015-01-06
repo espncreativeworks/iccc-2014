@@ -1,0 +1,36 @@
+@mixin gutter-less(){
+  & > [class*="col-"]{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@mixin float-less(){
+  float: none;
+}
+
+@mixin nowrap(){
+  white-space: nowrap;
+}
+
+@mixin template(){
+  display: none;
+}
+
+@mixin border-radius($radius){
+  @include border-top-radius($radius);
+  @include border-bottom-radius($radius);
+}
+
+@mixin transform-style($style: preserve-3d){
+  -webkit-transform-style: $style;
+     -moz-transform-style: $style;
+      -ms-transform-style: $style;
+          transform-style: $style;  
+}
+
+@mixin flip($x: -100%, $y: 0%, $degreesX: 0deg, $degreesY: -180deg){
+  -webkit-transform: translateX($x) rotateY($degreesY);
+      -ms-transform: translateX($x) rotateY($degreesY); // IE9+
+          transform: translateX($x) rotateY($degreesY);
+}
