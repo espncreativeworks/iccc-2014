@@ -218,11 +218,13 @@ jQuery(document).ready(function($){
     $.cookie('iccc', data, { expires: expiration });
     //debug.dir($.cookie('iccc'));
     
+    /*
     if ($this.attr('rel') === 'desktop'){
       e.preventDefault();
       Shadowbox.open(e.target);
       return false;
     }
+    */
   }
   
   // ---------------- 

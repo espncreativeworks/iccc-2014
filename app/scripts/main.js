@@ -125,7 +125,11 @@ jQuery(document).ready(function($){
   // Event Handling
   // ----------------  
   $('[data-control-action="submit-vote"]').on('click', function (e){
-    ga('send', 'event', 'Landing Page', 'Vote Button', 'Vote Button');
+  	if (Modernizr.touch){
+    	ga('send', 'event', 'Landing Page', 'Vote Button', 'Mobile');
+    } else {
+    	ga('send', 'event', 'Landing Page', 'Vote Button', 'Desktop');
+    }
   });
   
   $('.logo-container.infiniti').on('click', function (e) {
@@ -282,7 +286,7 @@ jQuery(document).ready(function($){
   // Initializers 
   // ---------------- 
   function init(){
-    Shadowbox.init({ skipSetup: true });
+    //Shadowbox.init({ skipSetup: true });
     activateNav();
     activateAffix(); 
     return $('body').removeClass('loading').addClass('loaded');
