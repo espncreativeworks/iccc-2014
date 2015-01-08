@@ -321,7 +321,8 @@ jQuery(document).ready(function($){
     var coach = getCurrentCoach()
     , fbLink = window.location.uri.scheme() + '://' + window.location.uri.hostname() + window.location.uri.directory() + '/' 
     , twttrBaseUrl = 'https://twitter.com/intent/tweet?source=webclient&text='
-    , twttrText = 'I just voted for Coach ' + coach.name.last + ' in the Infiniti Coaches\' Charity Challenge! Vote now http://espn.com/infiniti'
+    , coachLabel = coach.twitterName ? '@' + coach.twitterName : 'Coach ' + coach.name.last
+    , twttrText = 'I just voted for ' + coachLabel + ' in the Infiniti Coaches\' Charity Challenge! Vote now http://espn.com/infiniti'
     , overrides = {}
     , settings = {};
     
