@@ -268,7 +268,15 @@ jQuery(document).ready(function($){
   
   $('a[data-target="#masthead-carousel"]').on('click', function (){
     if ( !($('#masthead-carousel.carousel.slide').hasClass('in')) ) {
-      var dsrc = $('iframe.video').data("src");
+    	var rand = Math.floor(Math.random()*(10-0+1)+0);
+    	console.log("rand: " + rand);
+    	if (rand % 2 == 0) {
+    		var dsrc = "http://www.youtube.com/embed/jx6lcYsy6FE"
+    	} else {
+    		var dsrc = "http://www.youtube.com/embed/UPLnmUx-Lig"
+    	}
+    	
+      //var dsrc = $('iframe.video').data("src");
       $('iframe.video').attr('src',dsrc);
     } else {
       $('iframe.video').attr('src',"");

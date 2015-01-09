@@ -123,12 +123,12 @@ jQuery(document).ready(function($){
         // , $container = $this.parent()
         // , w = parseInt($container.width(), 10)
         // , h = parseInt($container.height(), 10)
-        , src = $this.attr('data-src')
+        //, src = $this.attr('data-src')
       ;
       
       //src = src + '&width=' + w + '&height=' + h;
       // $this.css({ width: w, height: h }).attr('src', src);
-      $this.attr('src', src);
+      //$this.attr('src', src);
     });
   }
   
