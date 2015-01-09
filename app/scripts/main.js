@@ -269,7 +269,7 @@ jQuery(document).ready(function($){
   $('a[data-target="#masthead-carousel"]').on('click', function (){
     if ( !($('#masthead-carousel.carousel.slide').hasClass('in')) ) {
     	var rand = Math.floor(Math.random()*(10-0+1)+0);
-    	console.log("rand: " + rand);
+    	//console.log("rand: " + rand);
     	if (rand % 2 == 0) {
     		var dsrc = "http://www.youtube.com/embed/jx6lcYsy6FE"
     	} else {
