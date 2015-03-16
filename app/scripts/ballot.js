@@ -31,10 +31,10 @@ jQuery(document).ready(function($){
     var _ballot = window.ballot = evt.ballot;
     debug.dir(ballot);  
     
-    initCountdown(new Date(_ballot.endedAt));
+    initCountdown(new Date(_ballot.startedAt));
     initMasthead();
-    initVisualization("1");
-    //initVotingClosedModal();
+    initVisualization(_ballot.visualization);
+    initVotingClosedModal();
     //return $(document).trigger({ type: 'ballotrendered' });
     
   });  
@@ -66,14 +66,24 @@ jQuery(document).ready(function($){
   
   function initVotingClosedModal(){
     var _ballot = window.ballot
-      , currentLabel = _ballot.label.slice(0).toLowerCase()
-      , comebackDate = new Date(_ballot.nextRound.startDate)
-      , $modal = $('#voting-closed-modal');
+      , currentLabel = _ballot.title
+      , comebackDate = _ballot.nextPhase
+      , $modal = $('#voting-closed-modal')
+	  , cbd = moment(comebackDate).format('LLL')
+	  , sd = new Date(_ballot.startedAt)
+	  , sdr = sd.getTime()
+	  , ed = new Date(_ballot.endedAt)
+	  , edr = ed.getTime()
+	;
       
       $modal.find('[data-ballot="label"]').text(currentLabel);
-      $modal.find('[data-ballot="nextRound.startDate"]').text(comebackDate.toLocaleString());
-    if (Date.now() < _ballot.currentRound.startDate || Date.now() > _ballot.currentRound.endDate){
-      $modal.modal({ backdrop: false });
+      $modal.find('[data-ballot="nextRound.startDate"]').text(cbd);
+    if (Date.now() < sdr || Date.now() > edr){
+	  if (currentLabel == "Winner") {
+	  	// do nothing
+	  } else {
+	  	$modal.modal({ backdrop: false });
+	  }
     }
   }
   

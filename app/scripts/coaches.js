@@ -281,7 +281,7 @@ jQuery(document).ready(function($){
       $template = renderCoaches('#phone-content-container .ballot-item-container.template', filterActive(_coaches));
     }
     
-    if ($('body').hasClass('info') && $('body').attr('id') !== 'leaderboard'){
+    if ($('body').hasClass('info') && $('body').attr('id') !== 'leaderboard' && $('body').attr('id') !== 'winner'){
       coach = getCurrentCoach();
       ranking = getCurrentCoachRanking();
       if ($('.thanks-content .thanks-item-container.template').length > 0){
@@ -289,6 +289,19 @@ jQuery(document).ready(function($){
       }
       $('.thanks-content .display-name-coach').html(coach.name.first + ' ' + coach.name.last);
       $('.thanks-content .display-ranking').html(ranking.ordinalize());
+    }  
+	
+    if ($('body').attr('id') === 'winner'){
+	  if (window.ballot.coaches.length > 1) {
+		  coach = window.ballot.coaches[3];
+	  } else {
+        coach = window.ballot.coaches[0];
+	  }
+      if ($('.winner-content .winner-item-container.template').length > 0){
+        $template = renderCoaches('.winner-content .winner-item-container.template', [coach]);  
+      }
+      $('.winner-content .display-name-coach').html(coach.name.first + ' ' + coach.name.last);
+	  $('.winner-content .display-name-last').html(coach.name.last);
     }  
     
     return $(document).trigger({ type: 'coachesrendered' });
@@ -306,13 +319,14 @@ jQuery(document).ready(function($){
     initiosSlider();    
     animateProgress();
     autovote();
+	
     if ($('body').attr('id') === 'thanks'){
       initThanksSharing();
     }
   });
   
   function addBallotEventListeners(){
-    $('.ballot, body.info').on('click', '[data-control-action="toggle-view"]', ontoggleview);
+    $('.ballot, body.info, body#winner').on('click', '[data-control-action="toggle-view"]', ontoggleview);
     $('.ballot').on('click', '[data-control-action="toggle-favorite"]', ontogglefavorite);
     $('.ballot').on('click', '[data-control-action="submit-vote"]', onvote);
   }
@@ -337,12 +351,66 @@ jQuery(document).ready(function($){
     
     $('body#thanks .social-share-container').on('click', '.facebook', function(e){
       e.preventDefault();
+      if (Modernizr.touch){
+        ga('send', 'event', 'Social', 'FB - '+ coach.name.last, 'Mobile');
+      } else {
+        ga('send', 'event', 'Social', 'FB - '+ coach.name.last, 'Desktop');
+      }
       return FB.ui(social.fb.opts, social.fb.callback);
     });
     
     twttrText = encodeURIComponent(twttrText);
     
     $('body#thanks .social-share-container .twitter').first().attr('href', twttrBaseUrl + twttrText);
+	
+	$('body#thanks .social-share-container .twitter').on('click',function(e) {
+      if (Modernizr.touch){
+      	ga('send', 'event', 'Social', 'TW - '+ coach.name.last, 'Mobile');
+      } else {
+        ga('send', 'event', 'Social', 'TW - '+ coach.name.last, 'Desktop');
+      }
+	});
+  }
+  
+  function initWinnerSharing(){
+    var coach = window.ballot.coaches[0]
+    , fbLink = window.location.uri.scheme() + '://' + window.location.uri.hostname() + window.location.uri.directory() + '/' 
+    , twttrBaseUrl = 'https://twitter.com/intent/tweet?source=webclient&text='
+    , coachLabel = coach.twitterName ? '@' + coach.twitterName : 'Coach ' + coach.name.last
+    , twttrText = 'Congratulations ' + coachLabel + ' for winning the Infiniti Coaches\' Charity Challenge! Visit now http://espn.com/infiniti'
+    , overrides = {}
+    , settings = {};
+    
+    overrides = {
+      link: fbLink,
+      name: 'Congratulations to Coach ' + coach.name.last,
+      picture: coach.headshot.url,
+      description: 'Congratulations to Coach ' + coach.name.last + ' for winning Infiniti Coaches\' Charity Challenge! Visit http://espn.com/infiniti to view his favorite charity!'
+    };
+    
+    social.fb.opts = $.extend(settings, social.fb.opts, overrides);
+    
+    $('body#winner .social-share-container').on('click', '.facebook', function(e){
+      e.preventDefault();
+      if (Modernizr.touch){
+        ga('send', 'event', 'Social', 'FB Winner- '+ coach.name.last, 'Mobile');
+      } else {
+        ga('send', 'event', 'Social', 'FB Winner- '+ coach.name.last, 'Desktop');
+      }
+      return FB.ui(social.fb.opts, social.fb.callback);
+    });
+    
+    twttrText = encodeURIComponent(twttrText);
+    
+    $('body#winner .social-share-container .twitter').first().attr('href', twttrBaseUrl + twttrText);
+	
+	$('body#winner .social-share-container .twitter').on('click',function(e) {
+      if (Modernizr.touch){
+      	ga('send', 'event', 'Social', 'TW Winner- '+ coach.name.last, 'Mobile');
+      } else {
+        ga('send', 'event', 'Social', 'TW Winner- '+ coach.name.last, 'Desktop');
+      }
+	});
   }
   
   function animateProgress(){
@@ -526,7 +594,8 @@ jQuery(document).ready(function($){
       //debug.dir(item);
       var $itemContainer = $(selector).first().clone(true, true)
         , ranking = item.rank
-        , pct = Math.round((item.totalVotes / (window.ballot.totalVotes * 1.0) * 100), 10)
+        //, pct = Math.round((item.totalVotes / (window.ballot.totalVotes * 1.0) * 100), 10)
+	  	, pct = Math.floor((item.totalVotes / (window.ballot.totalVotes * 1.0) * 100))
         , params = { next: 'vote', coachId: item._id, medium: Modernizr.touch ? 'mobile' : 'desktop' }
         , href = $.param(params)
       ;
@@ -577,7 +646,7 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: ballotUrl,
+      url: coachUrl,
       type: 'GET',
       dataType: 'json',
       data: {

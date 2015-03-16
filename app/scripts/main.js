@@ -136,6 +136,64 @@ jQuery(document).ready(function($){
   	ga('send', 'event', 'Header', 'Infiniti Logo', 'Infiniti Logo');
   });
   
+  $('.logo-container.ncaa').on('click', function (e) {
+  	ga('send', 'event', 'Header', 'NCAA', 'NCAA');
+  });
+  
+  $('.logo-container.nabc').on('click', function (e) {
+  	ga('send', 'event', 'Header', 'NABC', 'NABC');
+  });
+  
+  $('.btn-iccc.login').on('click',function (e) {
+  	if (Modernizr.touch){
+    	ga('send', 'event', 'Authenticate', 'Login Button', 'Mobile');
+    } else {
+      	ga('send', 'event', 'Authenticate', 'Login Button', 'Desktop');
+    }
+  });
+  
+  $('.btn-ccc.confirm').on('click',function (e) {
+  	if (Modernizr.touch){
+    	ga('send', 'event', 'Authenticate', 'Confirm Button', 'Mobile');
+    } else {
+      	ga('send', 'event', 'Authenticate', 'Confirm Button', 'Desktop');
+    }
+  });
+  
+  $('.social .twitter').on('click',function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Twitter - Main', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Twitter - Main', 'Desktop');
+    }
+  });
+  /*
+  $('.social.twitter').on('click',function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Twitter - Thank You', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Twitter - Thank You', 'Desktop');
+    }
+  });
+  */
+  
+  $('.social .facebook').on('click',function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Facebook - Main', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Facebook - Main', 'Desktop');
+    }
+  });
+  /*
+  $('.social.facebook').on('click',function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Facebook - Thank You', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Facebook - Thank You', 'Desktop');
+    }
+  });
+  */
+  
   $('[data-btn-action="logout"]').on('click', function (e){
     e.preventDefault();
     espn.memberservices.logout();
