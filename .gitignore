@@ -6,3 +6,4 @@ app/bower_components
 *.esproj
 *.espressostorage
 data/
+.DS_Store
