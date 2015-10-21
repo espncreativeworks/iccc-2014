@@ -34,7 +34,8 @@ jQuery(document).ready(function($){
     initCountdown(new Date(_ballot.endedAt));
     initMasthead();
     initVisualization("1");
-    //initVotingClosedModal();
+    initVotingClosedModal();
+	initVotingNotOpenModal();
     //return $(document).trigger({ type: 'ballotrendered' });
     
   });  
@@ -66,13 +67,26 @@ jQuery(document).ready(function($){
   
   function initVotingClosedModal(){
     var _ballot = window.ballot
-      , currentLabel = _ballot.label.slice(0).toLowerCase()
-      , comebackDate = new Date(_ballot.nextRound.startDate)
+      , currentLabel = _ballot.title
+      , comebackDate = _ballot.nextPhase
       , $modal = $('#voting-closed-modal');
       
       $modal.find('[data-ballot="label"]').text(currentLabel);
       $modal.find('[data-ballot="nextRound.startDate"]').text(comebackDate.toLocaleString());
-    if (Date.now() < _ballot.currentRound.startDate || Date.now() > _ballot.currentRound.endDate){
+    if (Date.now() < _ballot.startedAt || Date.now() > _ballot.endedAt){
+      $modal.modal({ backdrop: false });
+    }
+  }
+  
+  function initVotingNotOpenModal(){
+    var _ballot = window.ballot
+      , currentLabel = _ballot.title
+      , comebackDate = _ballot.nextPhase
+      , $modal = $('#voting-notopen-modal');
+      
+      $modal.find('[data-ballot="label"]').text(currentLabel);
+      $modal.find('[data-ballot="nextRound.startDate"]').text(comebackDate.toLocaleString());
+    if (Date.now() < _ballot.nextPhase || Date.now() > _ballot.endedAt){
       $modal.modal({ backdrop: false });
     }
   }
