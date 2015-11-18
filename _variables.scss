@@ -27,8 +27,8 @@ $ccc-light-grey: #cacaca;
 $ccc-turquoise: #2fc49f;
 $ccc-dark-navy: #1a2227;
 $ccc-grey-blue: #4b5860;
-$ccc-primary: $ccc-dark-navy;
-$ccc-accent: $ccc-grey-blue; 
+$ccc-primary: #000000;
+$ccc-accent: #000000; 
 $ccc-html-bg: #f0f3f8;
 $ccc-header-bg: #cad1d6;
 $ccc-body-gradient-start: #b8bec4;
@@ -93,7 +93,7 @@ $brand-info:            #5bc0de !default;
 // -------------------------
 
 $body-bg:               #fff !default;
-$text-color:            $gray-dark !default;
+$text-color:            #000000!default;
 
 // Links
 // -------------------------
@@ -251,7 +251,7 @@ $dropdown-link-disabled-color:   $gray-light !default;
 
 $dropdown-header-color:          $gray-light !default;
 
-$dropdown-caret-color:           #000 !default;
+$dropdown-caret-color:           #fff !default;
 
 
 // COMPONENT VARIABLES
@@ -333,7 +333,7 @@ $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-color:                #777 !default;
 $navbar-default-link-hover-color:          #333 !default;
 $navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-color:          #000000 !default;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
@@ -562,7 +562,7 @@ $list-group-active-color:     $component-active-color !default;
 $list-group-active-bg:        $component-active-bg !default;
 $list-group-active-border:    $list-group-active-bg !default;
 
-$list-group-link-color:          #555 !default;
+$list-group-link-color:           #000000 !default;
 $list-group-link-heading-color:  #333 !default;
 
 

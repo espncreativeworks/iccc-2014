@@ -1,18 +1,38 @@
-$label-font-family: $ccc-meta-pro-book-font-family;
+$label-font-family: $ccc-meta-pro-bold-font-family;
 
 #desktop-content-container {
   .toolbar-content {
     //height: 113px;
-    padding-top: 28px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width: 100%;
   
     @media (max-width: $grid-float-breakpoint){
-      padding-top: 14px;    
+      padding-top: 10px;    
     }
+  }
+
+  .toolbar-content {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
+.control-text {
+  font-family: $ccc-meta-pro-bold-font-family;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+  color: $ccc-white;
+}
+
+.caret {
+  color: $ccc-white;
+  border-top: 4px solid $ccc-white;
+}
+
 .toolbar-content {
-  background-color: $ccc-white;
+  background-color: black;
   
   h4, h5, h6 {
     margin-top: 0px;
@@ -30,19 +50,21 @@ $label-font-family: $ccc-meta-pro-book-font-family;
   }
 
   .info-label {
-    font-family: $label-font-family;
-    font-size: 13px;
-    font-weight: 600;
+    font-family: $ccc-meta-pro-bold-font-family;
+    font-size: 10px;
+    font-weight: 900;
     font-style: normal;
     text-transform: uppercase;
-    text-align: center;
+    text-align: left;
+    color: $ccc-white;
+    white-space: nowrap;
   
     @media (max-width: $grid-float-breakpoint){
       font-size: 23px;
       line-height: 23px;
       padding-top: 14px;
       padding-bottom: 16px;
-      font-weight: 500;
+      font-weight: 900;
     }
     
     h4 {
@@ -54,7 +76,7 @@ $label-font-family: $ccc-meta-pro-book-font-family;
   }
 
   .sorting-controls {
-    height: 20px;
+    height: 50px;
     line-height: 20px;
     text-transform: uppercase;
     @include sorting-controls();
@@ -66,23 +88,39 @@ $label-font-family: $ccc-meta-pro-book-font-family;
       width: 100%;
       height: 30px;
       font-size: 12px;
-      font-weight: 600;
+      font-weight: 900;
       text-transform: uppercase;
       padding: 0;
       margin: 0;
       
       @media (max-width: $screen-sm-max){
         font-size: 10px;
-        font-weight: 500;
+        font-weight: 900;
       }
     }
-  
+    
+    .label-width {
+      width: 20%;
+      float: left;
+    }
+
     .label-container {
       height: 20px;
-      font-size: inherit;
+      font-size: 14px;
       line-height: 14px;
       font-weight: inherit;
-      color: $ccc-light-grey;
+      color: #393838;
+      text-align: left;
+      font-family: $ccc-meta-pro-bold-font-family;
+      font-weight: 900;
+
+      @media (max-width: $screen-xs-max){
+        font-size: 16px;
+      }
+
+      @media (min-width: $screen-md-min){
+        font-size: 16px;
+      }
       
       &.text-smaller {
         @media (max-width: $screen-md-max){
@@ -92,8 +130,9 @@ $label-font-family: $ccc-meta-pro-book-font-family;
     
       .label-component {
         display: inline-block;
-        font-family: $label-font-family;
-        font-weight: 300;
+        font-family: $ccc-meta-pro-book-font-family;
+        font-weight: 900;
+
       }
     
       .separator {
@@ -127,7 +166,7 @@ $label-font-family: $ccc-meta-pro-book-font-family;
         height: 10px;
         border: 2px solid $ccc-primary;
         @include border-radius(50%);
-        background-color: $ccc-light-grey;
+        background-color: $ccc-white;
         
         &.last {
           right: -2px;
@@ -143,7 +182,7 @@ $label-font-family: $ccc-meta-pro-book-font-family;
         width: 100%;
         height: 6px;
         padding: 0;
-        background-color: $ccc-light-grey;
+        background-color: $ccc-white;
         
         &.last {
           width: 98%;
@@ -154,7 +193,7 @@ $label-font-family: $ccc-meta-pro-book-font-family;
     .phase.in-progress,
     .phase.completed {
       .label-container {
-        color: $ccc-primary;
+        color: $ccc-white;
       }
       .visualization {
         .indicator,
@@ -165,7 +204,7 @@ $label-font-family: $ccc-meta-pro-book-font-family;
     }
   }
 
-  #sorting-options-accordion {
+  #sorting-options-accordion-desktop {
     background-color: transparent;
     
     .sorting-controls {
@@ -173,36 +212,153 @@ $label-font-family: $ccc-meta-pro-book-font-family;
     }
   
     .panel {
-      background-color: $ccc-primary;
-    
+      position: absolute;
+      z-index: 9999999;
+      background-color: transparent;
+      box-shadow: none !important;
+      /*line-height: 30px;*/
+      padding: 5px 5px 5px 0px;
+      font-size: 18px;
+      width: auto;
+      color: $ccc-white;
+      text-align: left;
+      font-weight: 900;
+      text-transform: uppercase;
+
+
       .panel-heading {
-        width: 100%;
-        height: 38px;
         padding-top: 0;
         padding-bottom: 0;
-        line-height: 38px;
-        font-size: 18px;
-        background-color: inherit;
-        color: $ccc-white;
       
         .panel-title {
-          width: 100%;
+          /*width: 60%;*/
           height: inherit;
-          color: inherit;
+          white-space: nowrap;
+          /*color: $ccc-white;*/
+                  
+          [data-toggle="collapse"] {
+          /*[data-toggle="dropdown"] {*/
+            display: block;
+            /*width: 60%;*/
+            height: inherit;
+            /*color: $ccc-white;*/
+            /*text-align: left;*/
+                      
+            span {
+              line-height: inherit;
+              color: $ccc-white;
+            
+              &.control-text {
+                &.current-value {
+                  color: $ccc-white;
+                  text-transform: uppercase;
+
+                  &:hover {
+                    background-color: transparent !important; 
+                    color: #6c6c6c !important;
+                    text-decoration: none !important;
+                  }
+
+                }
+              }
+              &.caret {
+                margin-left: 5px;
+                //border-top-color: $ccc-white;
+              }
+            }
+          }
+        }
+      }
+      .panel-collapse {
+        .panel-body {
+            padding: 0;
+            margin-top: 5px;
+            border-top: none !important;
+            background-color: black;
+            li {
+              border-top: 1px solid $ccc-white;
+              
+            }
+          
+        }
+      }
+    }
+  
+  } 
+
+  #sorting-options-accordion {
+    background-color: transparent;
+
+    a {
+        color: #6c6c6c;
+
+        &:hover,
+        &:active {
+          color: $ccc-white !important;
+        }
+      }
+    
+    .sorting-controls {
+      height: auto;
+    }
+  
+    .panel {
+      background-color: transparent;
+      box-shadow: none !important;
+      padding: 5px;
+      font-size: 18px;
+      width: auto;
+      color: $ccc-white;
+      text-align: left;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      position: relative;
+
+      .sort-container {
+        float: left;
+        width: 0%;
+        white-space: nowrap;
+
+        .sort-text {
+          padding-left: 30px;
+          color: #6c6c6c;
+        }
+      }
+
+      .current-container {
+        display: inline;
+
+      }
+    
+      .panel-heading {
+/*        width: 100%;
+        height: 38px;*/
+        padding-top: 0;
+        padding-bottom: 0;
+/*        line-height: 38px;
+        font-size: 18px;*/
+        /*background-color: inherit;*/
+        /*color: $ccc-white;*/
+      
+        .panel-title {
+/*          width: 100%;
+          height: inherit;
+          color: inherit;*/
                   
           [data-toggle="collapse"] {
             display: block;
-            width: 100%;
-            height: inherit;
-            color: inherit;
-            text-align: center;
+            /*width: 100%;*/
+            /*height: inherit;*/
+            /*color: inherit;*/
+            /*text-align: center;*/
           
             &:hover,
             &:active {
-              text-decoration: none;
+              text-decoration: none !important;
             }
                       
-            span {
+/*            span {
               line-height: inherit;
               color: inherit;
             
@@ -213,8 +369,24 @@ $label-font-family: $ccc-meta-pro-book-font-family;
                 }
               }
               &.caret {
-                margin-left: 20px;
-                border-top-color: $ccc-accent;
+                margin-left: 5px;
+                border-top-color: $ccc-white;
+              }
+            }*/
+
+            span {
+              line-height: inherit;
+              color: #6c6c6c;
+            
+              &.control-text {
+                &.current-value {
+                  color: $ccc-white;
+                  text-transform: uppercase;
+                }
+              }
+              &.caret {
+                margin-left: 5px;
+                //border-top-color: $ccc-white;
               }
             }
           }
@@ -222,18 +394,15 @@ $label-font-family: $ccc-meta-pro-book-font-family;
       }
       .panel-collapse {
         .panel-body {
-          .nav-pills {
+            padding: 0;
+            margin-top: 5px;
+            border-top: none !important;
+            background-color: black;
             li {
-              a {
+              border-top: 1px solid $ccc-white;
               
-              }
-              &.active {
-                a {
-                  background-color: $ccc-accent; 
-                }
-              }
             }
-          }
+          
         }
       }
     }

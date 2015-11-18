@@ -11,10 +11,10 @@ $ccc-scoreboard-font-family: 'Scoreboard';
 $ccc-didot-font-family: 'Didot 24 A', 'Didot 24 B';
 $ccc-meta-pro-font-family: 'Infiniti Meta Pro';
 $ccc-meta-pro-book-font-family: $ccc-meta-pro-font-family + ' Book';
-$ccc-meta-pro-black-font-family: $ccc-meta-pro-font-family + ' Black';
+$ccc-meta-pro-bold-font-family: 'InfinitiMetaPro-Black';
 
-$ccc-font-family-sans-serif: $ccc-meta-pro-book-font-family;
-$ccc-headings-font-family: $ccc-didot-font-family;
+$ccc-font-family-sans-serif: $ccc-meta-pro-bold-font-family;
+$ccc-headings-font-family: $ccc-meta-pro-bold-font-family;
 $ccc-alt-font-family: $ccc-jaf-bernina-font-family;
 $ccc-display-font-family: $ccc-scoreboard-font-family;
 
@@ -22,35 +22,37 @@ $ccc-display-font-family: $ccc-scoreboard-font-family;
 // --------------------------------------------------
 $ccc-transparent: rgba(0,0,0,0.0);
 $ccc-white: #fff;
+$ccc-black: #000000;
 $ccc-grey: #afb2b4; 
 $ccc-light-grey: #cacaca;
 $ccc-turquoise: #2fc49f;
+$ccc-red: #e33b40;
 $ccc-dark-navy: #1a2227;
 $ccc-grey-blue: #4b5860;
-$ccc-primary: $ccc-dark-navy;
-$ccc-accent: $ccc-grey-blue; 
-$ccc-html-bg: #f0f3f8;
-$ccc-header-bg: #cad1d6;
-$ccc-body-gradient-start: #b8bec4;
+$ccc-primary: $ccc-black;
+$ccc-accent: #e4585d;
+$ccc-html-bg: #ffffff;
+$ccc-header-bg: #ffffff;
+$ccc-body-gradient-start: #ffffff;
 $ccc-body-gradient-end: $ccc-html-bg;
 $ccc-countdown-color: #b3babf;
 
 
 // Links
 // --------------------------------------------------
-$ccc-link-color: $ccc-white !default;
+$ccc-link-color: $ccc-black !default;
 $ccc-link-hover-color: $ccc-accent !default;
 
 
 // Navbar
 // --------------------------------------------------
-$ccc-navbar-default-bg: $ccc-dark-navy;
+$ccc-navbar-default-bg: #ffffff;
 
 
 // Buttons
 // --------------------------------------------------
 $ccc-btn-default-color: $ccc-white !default;
-$ccc-btn-default-bg: $ccc-grey !default;
+$ccc-btn-default-bg: $ccc-white !default;
 $ccc-btn-default-border: $ccc-transparent !default;
 
 $ccc-btn-primary-color: $ccc-white !default;

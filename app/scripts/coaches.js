@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
   // ---------------- 
   CONSTANTS['ASCENDING'] = 'asc';
   CONSTANTS['DESCENDING'] = 'desc';
-  CONSTANTS['ASSET_PATH'] = espn.core.cdnHTTPPath + 'promotions/bsa/apps/infiniti/2015/coaches-charity-challenge/';
+  CONSTANTS['ASSET_PATH'] = espn.core.cdnHTTPPath + 'promotions/bsa/apps/infiniti/2016/coaches-charity-challenge/';
   CONSTANTS['THUMBNAIL_PATH'] = CONSTANTS['ASSET_PATH'] + 'images/coaches/';
   
   // ---------------- 
@@ -107,19 +107,41 @@ jQuery(document).ready(function($){
     e.preventDefault();
     var $this = $(this);
     if ( !$this.parent().hasClass('active') ){
-      $('#options li.active').removeClass('active');
+      $('#options li.active').removeClass('active hide');
     
       var $target = $(e.target) 
         , $accordion = $('#sorting-options-accordion')
         , $selected = $('#sorting-input').find('[selected="selected"]').removeAttr('selected').siblings('[value="' + $target.attr('data-option-value') + '"]').attr('selected','selected');
         //, evt = { type: 'sortcomplete', sortKey: $this.attr('data-sort').split('-').pop(), target: $this };
       
-      $target.parent().addClass('active');
+      $target.parent().addClass('active hide');
       $accordion.find('.panel-title [data-toggle="collapse"] .control-text.current-value').text($selected.val());
       $accordion.find('.panel-title [data-toggle="collapse"]').trigger('click');
       $('.ios-slider').iosSlider('update');
       $('.ios-slider').iosSlider('goToSlide', 1);
       updatePagination($('.pagination [data-control-action="paginate"]').first());
+      //$(document).trigger(evt);
+    } else {
+      e.stopImmediatePropagation();
+    }
+  }
+
+  function ondesktopsort(e){
+    e.preventDefault();
+    var $this = $(this);
+    if ( !$this.parent().hasClass('active') ){
+      $('#options-desktop li.active').removeClass('active hide');
+    
+      var $target = $(e.target) 
+        , $accordion = $('#sorting-options-accordion-desktop')
+        , $selected = $('#sorting-input-desktop').find('[selected="selected"]').removeAttr('selected').siblings('[value="' + $target.attr('data-option-value') + '"]').attr('selected','selected');
+        //, evt = { type: 'sortcomplete', sortKey: $this.attr('data-sort').split('-').pop(), target: $this };
+      
+      $target.parent().addClass('active hide');
+      $accordion.find('.panel-title [data-toggle="collapse"] .control-text.current-value').text($selected.val());
+      $accordion.find('.panel-title [data-toggle="collapse"]').trigger('click');
+      // $accordion.find('.panel-title [data-toggle="dropdown"] .control-text.current-value').text($selected.val());
+      // $accordion.find('.panel-title [data-toggle="dropdown"]').trigger('click');
       //$(document).trigger(evt);
     } else {
       e.stopImmediatePropagation();
@@ -209,9 +231,21 @@ jQuery(document).ready(function($){
     ;
     
     if (typeof data.coachIds === 'undefined'){
-      data.coachIds = [coachId];
+      //data.coachIds = [coachId];
+      data.coachIds = coachId;
+      if (Modernizr.touch) {
+        data.medium = "mobile";
+      } else {
+        data.medium = "desktop";
+      }
     } else {
-      data.coachIds.push(coachId);
+      //data.coachIds.push(coachId);
+      data.coachIds = coachId;
+      if (Modernizr.touch) {
+        data.medium = "mobile";
+      } else {
+        data.medium = "desktop";
+      }
     }
     
     data.lastVoted = Date.now();
@@ -231,6 +265,7 @@ jQuery(document).ready(function($){
   // Event Handling
   // ----------------
   $('#desktop-content-container .sorting-controls, #thanks-content-container .sorting-controls').on('click', '[data-control-action="sort"]', onsort);
+  $('#options-desktop').on('click', '[data-control-action="sort"]', ondesktopsort);
   $('#options').on('click', '[data-control-action="sort"]', onmobilesort);
   //$(document).on('sortcomplete', onsortcomplete);
   
@@ -315,6 +350,7 @@ jQuery(document).ready(function($){
     $('.ballot, body.info').on('click', '[data-control-action="toggle-view"]', ontoggleview);
     $('.ballot').on('click', '[data-control-action="toggle-favorite"]', ontogglefavorite);
     $('.ballot').on('click', '[data-control-action="submit-vote"]', onvote);
+    $('.ballot').on('click', '[data-control-action="submit-login"]', onvote);
   }
   
   function initThanksSharing(){
@@ -359,6 +395,7 @@ jQuery(document).ready(function($){
     var params = window.location.uri.search(true);
     if (params.coachId && parseInt(params.coachId,10)){
       $('.ballot-item-container[data-nominee-id="' + params.coachId + '"]').first().find('[data-control-action="submit-vote"]').trigger('click');
+      $('.ballot-item-container[data-nominee-id="' + params.coachId + '"]').first().find('[data-control-action="submit-login"]').trigger('click');
     }
   }
   
@@ -427,6 +464,16 @@ jQuery(document).ready(function($){
     ;
   
     selector = $('#options').find('[data-control-action="sort"][data-option-value="' + currentOption + '"]').attr('data-sort');
+    //debug.log('getCurrentSortSelector() = ' + selector);
+    return selector;
+  }
+
+  function getCurrentSortSelectorDesktop(){
+    var currentOption = $('#sorting-input-desktop').find('[selected="selected"]').val()
+      , selector = ''
+    ;
+  
+    selector = $('#options-desktop').find('[data-control-action="sort"][data-option-value="' + currentOption + '"]').attr('data-sort');
     //debug.log('getCurrentSortSelector() = ' + selector);
     return selector;
   }
@@ -548,6 +595,7 @@ jQuery(document).ready(function($){
       $itemContainer.find('.display-result').text(pct + '%');
       $itemContainer.find('.sort-result').text(pct / 100.0);
       $itemContainer.find('[data-control-action="submit-vote"]').attr('href', '?' + href).attr('rel', params.medium);
+      //$itemContainer.find('[data-control-action="submit-login"]').attr('data-params', '?' + href).attr('rel', params.medium);
       $ballotContainer.append($itemContainer.removeClass('template'));
     });
     //debug.groupEnd('coaches');

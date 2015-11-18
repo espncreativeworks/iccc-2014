@@ -1,7 +1,7 @@
-$dark-gradient-ends: #d5b272;
-$dark-gradient-mid: #caa45f;
-$light-gradient-ends: #ecd4a6;
-$light-gradient-mid: #e5c586;
+$dark-gradient-ends: #aaa9a9;
+$dark-gradient-mid: #bbbaba;
+$light-gradient-ends: #cfcfcf;
+$light-gradient-mid: #e2e1e1;
 
 #leaderboard-content {
   
@@ -10,8 +10,9 @@ $light-gradient-mid: #e5c586;
   min-height: 1500px;
   
   .leaderboard {
-    
+
     .leaderboard-header {
+      padding-left: 15px;
       height: 36px;
       line-height: 36px;
       margin-bottom: 4px;
@@ -36,7 +37,7 @@ $light-gradient-mid: #e5c586;
         
         .sorting-control {
           // override default settings
-          [data-control-action="sort"]{
+          //[data-control-action="sort"]{
             min-width: 90%;
             max-width: 100%;
             margin: 0;
@@ -45,7 +46,7 @@ $light-gradient-mid: #e5c586;
             text-align: inherit;
             color: $ccc-primary;
           
-            &.selected {
+/*            &.selected {
               font-weight: 600;
             }
           
@@ -53,16 +54,23 @@ $light-gradient-mid: #e5c586;
             &:active {
               color: $ccc-primary;
               text-decoration: none;
-            }
-          }
+            }*/
+          //}
         }
       }
     }
+
+    li div{
+      display: table-cell;
+      vertical-align: middle;
+      height: 36px;
+    }
+
     
     .leaderboard-item {
-    
+      padding-left: 15px;
       min-height: 36px;
-      line-height: 36px;
+      line-height: 18px;
       margin-bottom: 4px;
       font-size: 14px;
       text-transform: none;
@@ -74,9 +82,9 @@ $light-gradient-mid: #e5c586;
         @include gradient-horizontal-three-colors($dark-gradient-ends, $dark-gradient-mid, 50%, $dark-gradient-ends);
       }
     
-      &:first-child {
+/*      &:first-child {
         color: $ccc-accent;
-      }
+      }*/
     }
   }
 }

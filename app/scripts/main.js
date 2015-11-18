@@ -49,10 +49,10 @@ jQuery(document).ready(function($){
   
   social.fb.opts = {
     method: 'feed',
-    redirect_uri: 'http://promo.espn.go.com/espn/contests/infiniti/2015/',
+    redirect_uri: 'http://promo.espn.go.com/espn/contests/infiniti/2016/',
     name: 'Infiniti Coaches Charity Challenge',
-    link: 'http://promo.espn.go.com/espn/contests/infiniti/2015/',
-    picture: 'http://a.espncdn.com/contests/infiniti/2015/coaches-charity-challenge/display/180x180.jpg',
+    link: 'http://promo.espn.go.com/espn/contests/infiniti/2016/',
+    picture: 'http://a.espncdn.com/contests/infiniti/2016/coaches-charity-challenge/display/180x180.jpg',
     caption: 'http://es.pn/1aSRogz',
     description: 'Coaches are competing to win up to $100,000 for charity. Raise votes for your coach by promoting him through social media and e-mail. Visit http://espn.com/infiniti to get started!'
   };
@@ -78,7 +78,7 @@ jQuery(document).ready(function($){
   function onslid(){
     slidesShown++;
     if (slidesShown === $('#masthead-carousel .item').length){
-      $('#masthead-carousel').carousel('pause');
+      //$('#masthead-carousel').carousel('pause');
     } 
   }
   
@@ -129,6 +129,14 @@ jQuery(document).ready(function($){
     	ga('send', 'event', 'Landing Page', 'Vote Button', 'Mobile');
     } else {
     	ga('send', 'event', 'Landing Page', 'Vote Button', 'Desktop');
+    }
+  });
+
+  $('[data-control-action="submit-login"]').on('click', function (e){
+    if (Modernizr.touch){
+      ga('send', 'event', 'Landing Page', 'Vote Button', 'Mobile');
+    } else {
+      ga('send', 'event', 'Landing Page', 'Vote Button', 'Desktop');
     }
   });
   

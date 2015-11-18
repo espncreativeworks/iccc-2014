@@ -141,17 +141,21 @@
 // slide your carousel holds.
 
 .carousel-indicators {
-  bottom: 0px;
+  bottom: 0px !important;
   margin-bottom: 0px;
   background-color: transparent;
-  background-image: url($image-path + 'bg_carousel_indicators.png');
+  //background-image: url($image-path + 'bg_carousel_indicators.png');
   background-repeat: no-repeat;
   background-position: center bottom;
   width: 142px;
   margin-left: -71px;
 
+  @media (max-width: $screen-xs-max){
+    bottom: 0px !important;
+  }
+
   li {
-    border: 1px solid #4b5860;
+    border: 1px solid $ccc-white;
     /* 
     border-radius: 10px;
 
@@ -171,7 +175,7 @@
     margin: 1px;
     width:  10px;
     height: 10px;
-    background-color: #4b5860;
+    background-color: $ccc-white;
   }
 }
 

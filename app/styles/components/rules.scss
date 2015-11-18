@@ -1,31 +1,37 @@
-$heading-font-family: $ccc-didot-font-family;
+$heading-font-family: $ccc-meta-pro-bold-font-family;
 $heading-border-color: $ccc-body-gradient-end;
-$sub-heading-font-family: $ccc-meta-pro-book-font-family;
+$sub-heading-font-family: $ccc-meta-pro-bold-font-family;
 
 #rules-content-container { 
+  font-weight: 300;
   a {
-    color: $ccc-grey-blue;
+    color: #6c6c6c;
     
     &:hover, 
     &:active {
-      color: $ccc-light-grey;
+      color: $ccc-light-grey !important;
     } 
   }
   
   .promo-title {
+    font-weight: 900;
     font-family: $heading-font-family;
     text-transform: uppercase;
   }
   
   .sub-heading {
+    font-weight: 900;
     font-family: $sub-heading-font-family;
   }
   
   .content-heading {
+    font-weight: 900;
+    font-family: $sub-heading-font-family;
     text-transform: uppercase;
   }
   
   .section-heading {
+    font-weight: 900;
     width: 60%;
     padding-top: 20px;
     padding-bottom: 6px;
@@ -35,11 +41,16 @@ $sub-heading-font-family: $ccc-meta-pro-book-font-family;
       width: 83%;
     }
   }
+
+  p, li {
+    font-weight: 300;
+    font-family: $ccc-meta-pro-book-font-family;
+  }
 }
 
-body#rules {
+/*body#rules {
   .masthead,
   .collapse-controls { 
     display: none; 
   }
-}
+}*/

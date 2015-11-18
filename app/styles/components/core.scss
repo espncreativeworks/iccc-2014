@@ -1,8 +1,10 @@
 html {
   background-color: $ccc-html-bg;
+  overflow-x: hidden;
 }
 
 body {
+  color: #000000;
   @include gradient-vertical($ccc-body-gradient-start, $ccc-body-gradient-end);
   @media (max-width: $screen-xs-max){
     padding-top: 40px !important;
@@ -18,7 +20,7 @@ body {
     @include opacity(1);
     @include transition(opacity 1s ease-in-out 500ms);
   }
-  font-family: "Infiniti Meta Pro Book","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "InfinitiMetaPro-Black","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 sup {
@@ -75,8 +77,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 a {
-  color: #fff;
+  color: $ccc-white;
+  text-decoration: none !important;
 }
+
+a:active {
+  background-color: transparent !important; 
+  color: #6c6c6c !important;
+  text-decoration: none !important;
+}
+
 a:hover {
-  color: $ccc-light-grey;
+  background-color: transparent !important; 
+  color: #6c6c6c !important;
+  text-decoration: none !important;
 }

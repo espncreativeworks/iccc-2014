@@ -8,6 +8,15 @@ function getCurrentSortSelector(){
   return selector;
 }
 
+function getCurrentSortSelectorDesktop(){
+  var desktopCurrentOption = $('#sorting-input-desktop').find(':selected').val()
+    , selector = ''
+  ;
+
+  desktopSelector = $('#options-desktop').find('[data-control-action="sort"][data-option-value="' + currentOption + '"]').attr('data-sort');
+  return desktopSelector;
+}
+
 function findFirstIndexOf(letter, selector){
   var firstIndex = 0;
   letter = letter.toLowerCase();

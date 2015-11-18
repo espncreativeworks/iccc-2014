@@ -12,7 +12,9 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   
   <link rel="stylesheet" href="http://a.espncdn.com/contests/fonts/scoreboard/font.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://a.espncdn.com/contests/fonts/infiniti-meta-pro/book/font.css" type="text/css">
+  <link rel="stylesheet" type="text/css" href="http://a.espncdn.com/promotions/bsa/fonts/infiniti/infinitiMetaPro-Black/InfinitiMetaPro-Black.css" />
   <link rel="stylesheet" href="http://cloud.typography.com/7085272/782722/css/fonts.css" type="text/css">
     
   <!-- build:css(.tmp) styles/main.css -->
@@ -34,7 +36,7 @@
     <nav class="navbar navbar-default navbar-fixed-top visible-xs" role="navigation">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="./index.html">ESPN</a> 
+        <a class="navbar-brand" href="./index.html"><img src="images/logo_espn.png" width="61" alt="ESPN"></a> 
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ccc-xs-nav">
           <span class="sr-only">Toggle navigation</span> 
           <span class="icon-bar"></span>
@@ -46,97 +48,92 @@
         <ul class="nav navbar-nav">
           <li><a href="./index.html">Vote Now</a></li>
           <li><a href="./leaderboard.html">Leaderboard</a></li>
-          <li><a href="./rules.html">Official Rules</a></li>
-          <li class="social"><a href="#" class="facebook">F</a></li>
-          <li class="social"><a href="#" class="twitter">T</a></li>
+          <li><a href="./rules.html">How It Works</a></li>
+          <li class="mobile-social social"><a href="javascript:void(0);" target="_blank" class="facebook" title="Share on Facebook"><i class="fa fa-circle fa-2x"></i><i class="fa fa-facebook"></i></a></li>
+          <li class="mobile-social social twitter-mobile"><a href="https://twitter.com/intent/tweet?source=webclient&text=Help+your+favorite+coach+win+%24100%2C000+for+his+charity+in+the+Infiniti+Coaches'+Charity+Challenge.+Vote+now!+http%3A%2F%2Fespn.com%2Finfiniti" target="_blank" class="twitter" title="Share on Twitter"><i class="fa fa-circle fa-2x"></i><i class="fa fa-twitter"></i></a></li>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
     </nav>
 
     <header class="header promo row">
-      <div class="col-xs-6">
-        <div class="row gutter-less title-container">
-          <!--
-          <div class="col-xs-12">
-            <div class="logo-container">
-              <div class="logo title"></div>
-            </div>
+      <div class="col-xs-10 col-xs-offset-1">
+        <div class="col-xs-6">
+          <div class="row gutter-less title-container">
+            <div class="col-xs-10 col-sm-7 center-block"><h1 class="title-copy small">The</h1></div>
+            <div class="col-xs-10 col-sm-7 center-block"><h1 class="title-copy tight">Infiniti</h1></div>
+            <div class="col-xs-10 col-sm-7 center-block"><h1 class="title-copy tighter nowrap">Coaches&rsquo; Charity</h1></div>
+            <div class="col-xs-10 col-sm-7 center-block"><h1 class="title-copy tight small">Challenge</h1></div>
           </div>
-          -->
-          <div class="col-xs-10 col-sm-7 float-less center-block"><h1 class="title-copy small">The</h1></div>
-          <div class="col-xs-10 col-sm-7 float-less center-block"><h1 class="title-copy tight">Infiniti</h1></div>
-          <div class="col-xs-10 col-sm-7 float-less center-block"><h1 class="title-copy tighter nowrap">Coaches&rsquo; Charity</h1></div>
-          <div class="col-xs-10 col-sm-7 float-less center-block"><h1 class="title-copy tight small">Challenge</h1></div>
         </div>
-      </div>
-      <div class="col-xs-6">
-        <div class="row lockup-container">
-          <div class="col-xs-10 col-sm-7 float-less center-block">
-            <div class="row gutter-less logos">
-              <div class="col-xs-12 col-sm-5">
-                <div class="logo-container infiniti"><a href="javascript:void(0);" class="logo center-block"></a></div>
-              </div>
-              <div class="col-xs-6 col-sm-3">
-                <div class="logo-container ncaa"><a href="javascript:void(0);" class="logo center-block"></a></div>
-              </div>
-              <div class="col-xs-6 col-sm-4">
-                <div class="logo-container nabc"><a href="javascript:void(0);" class="logo center-block"></a></div>
+        <div class="col-xs-6 right-padding-less">
+          <div class="row lockup-container">
+            <div class="col-xs-12 float-less center-block right-padding-less">
+              <div class="row gutter-less logos">
+                <div class="col-xs-12 col-sm-5">
+                  <div class="logo-container infiniti"><a href="javascript:void(0);" class="logo center-block"></a></div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                  <div class="logo-container ncaa"><a href="javascript:void(0);" class="logo center-block"></a></div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                  <div class="logo-container nabc"><a href="javascript:void(0);" class="logo center-block"></a></div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-xs-12">
-            <p class="legalese text-center">Official Corporate Partner of NCAA Basketball<sup>&reg;</sup> and the National Association of Basketball Coaches</p>
+            <div class="col-xs-12 right-padding-less">
+              <p class="legalese text-center">Official Corporate Partner of NCAA Basketball<sup>&reg;</sup> and the National Association of Basketball Coaches</p>
+            </div>
           </div>
         </div>
       </div>
     </header>
   
     <nav class="navbar row hidden-xs sticky" role="navigation">
-      <ul class="nav navbar-nav center-block">
+      <ul class="nav navbar-nav center-block col-sm-10 col-sm-offset-1">
         <li><a href="./index.html">Vote Now</a></li>
         <li><a href="./leaderboard.html">Leaderboard</a></li>
-        <li><a href="./rules.html">Official Rules</a></li>
-        <li class="social"><a href="#" class="facebook text-hide" title="Share on Facebook">Facebook</a></li>
-        <li class="social"><a href="#" class="twitter text-hide" title="Share on Twitter">Twitter</a></li>
-        <li class="countdown-container hidden-xs">
-          <div class="row gutter-less labels">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2"><h6 class="countdown-label time">Days</h6></div>
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2"><h6 class="countdown-label time">Hours</h6></div>
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2"><h6 class="countdown-label time">Mins</h6></div>
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2"><h6 class="countdown-label time">Secs</h6></div>
-          </div>
-          <div class="row gutter-less countdown">
-            <div class="col-xs-1"></div>
-            <div class="col-xs-2">
-              <span class="countdown-unit center-block text-center" data-countdown-unit="days"></span>
-            </div>
-            <div class="col-xs-1">
-              <span class="countdown-unit" data-countdown-unit="separator">:</span>
-            </div>
-            <div class="col-xs-2">
-              <span class="countdown-unit center-block text-center" data-countdown-unit="hours"></span>
-            </div>
-            <div class="col-xs-1">
-              <span class="countdown-unit" data-countdown-unit="separator">:</span>
-            </div>
-            <div class="col-xs-2">
-              <span class="countdown-unit center-block text-center" data-countdown-unit="minutes"></span>
-            </div>
-            <div class="col-xs-1">
-              <span class="countdown-unit" data-countdown-unit="separator">:</span>
-            </div>
-            <div class="col-xs-2">
-              <span class="countdown-unit center-block text-center" data-countdown-unit="seconds"></span>
-            </div>
-          </div>
-        </li>
+        <li><a href="./rules.html">How It Works</a></li>
+        <ul class="social-icons">
+          <li class="social"><a href="javascript:void(0);" target="_blank" class="facebook text-hide" title="Share on Facebook"><i class="fa fa-circle fa-3x"></i><i class="fa fa-facebook fa-lg"></i></a></li>
+          <li class="social"><a href="https://twitter.com/intent/tweet?source=webclient&text=Help+your+favorite+coach+win+%24100%2C000+for+his+charity+in+the+Infiniti+Coaches'+Charity+Challenge.+Vote+now!+http%3A%2F%2Fespn.com%2Finfiniti" target="_blank" class="twitter text-hide" title="Share on Twitter"><i class="fa fa-circle fa-3x"></i><i class="fa fa-twitter fa-lg"></i></a></li>
+        </ul>
       </ul>
     </nav>
+
+    <div class="row masthead">
+      <!-- <div id="masthead-carousel" class="carousel slide collapse"> -->
+      <div id="masthead-carousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#masthead-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#masthead-carousel" data-slide-to="1"></li>
+          <li data-target="#masthead-carousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <div class="item row active">
+            <div class="slide-container">
+              <div class="video-title col-xs-12 col-sm-10 col-sm-offset-1">Coach vs Coach</div>
+              <div class="video-description col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4">Vote for your favorite coach daily to help him advance through each round and win $100,000 for charity.</div>
+              <div class="col-xs-12">
+                <button class="video-button btn">Watch Video</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#masthead-carousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#masthead-carousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
   
   </div>
   
@@ -146,32 +143,32 @@
       <div class="col-xs-12">
         <h1 class="page-header promo-title">The Infiniti Coaches&rsquo; Charity Challenge</h1>
         <h2 class="content-heading">How the Challenge Works</h2>
-        <p class="lead">For ten (10) weeks, the nation&rsquo;s top coaches will be counting on fans like you to vote for their favorite charity. Vote for your coach&rsquo;s favorite charity. Increase their chances by sharing with your friends. The coaches receiving the most votes gain a spot in the finals, with the winning coach receiving <sup>$</sup>100,000 toward his charity (each coach will get at least <sup>$</sup>1,000 for his favorite cause). So start voting now!</p>
+        <p class="lead">For ten (10) weeks, the nation&rsquo;s top coaches will be counting on fans like you to vote for their favorite charity. Vote for your coach&rsquo;s favorite charity. Help increase their chances by sharing with your friends. The coaches receiving the most votes gain a spot in the finals, with the winning coach receiving <sup>$</sup>100,000 toward his charity (each coach will get at least <sup>$</sup>1,000 for his favorite cause). So start voting now!</p>
         <h4 class="section-heading sub-heading">About the Voting</h4>
         <p>Vote for one coach&rsquo;s charity per day.</p>
         <ul>
-          <li>Round 1 voting runs from 1/6 at 3:00PM ET - 1/26 at 11:59AM ET.</li>
-          <li>Round 2 voting runs from 1/27 at 1:00PM ET - 2/16 at 11:59AM ET.</li>
-          <li>Round 3 voting runs from 2/17 at 1:00PM ET - 3/2 at 11:59AM ET.</li>
-          <li>Final Four voting runs from 3/3 at 1:00PM ET - 3/16 at 11:59AM ET.</li>
+          <li>Round 1 voting runs from 1/4/16 at 3:00PM ET - 1/24/16 at 11:59AM ET.</li>
+          <li>Round 2 voting runs from 1/25/16 at 1:00PM ET - 2/14/16 at 11:59AM ET.</li>
+          <li>Round 3 voting runs from 2/15/16 at 1:00PM ET - 2/28/16 at 11:59AM ET.</li>
+          <li>Final Four voting runs from 2/29/16 at 1:00PM ET - 3/13/16 at 11:59AM ET.</li>
         </ul>
         <p>Don’t forget to vote each day.</p>
-        <p>Visit <a href="http://www.espn.com/infiniti" title="www.espn.com/infiniti">www.espn.com/infiniti</a> on 3/16 after the winner is announced.</p>
+        <p>Visit <a href="http://www.espn.com/infiniti" title="www.espn.com/infiniti">www.espn.com/infiniti</a> on 3/13/2016 after voting is closed for the winner announcement.</p>
         <h2 class="content-heading">Official Terms</h2>
         <h3 class="promo-title">The Infiniti Coaches&rsquo; Charity Challenge</h3>
         <p class="no-purchase">No purchase necessary. Void where prohibited.</p>
         <h4 class="section-heading sub-heading">Eligibility</h4>
-        <p>To vote for a Coach/Designated Charity (defined below) during the Voting Period (also defined below) in The Infiniti Coaches&rsquo; Charity Challenge (&ldquo;Challenge&rdquo;), you must be a legal resident of the fifty (50) United States or the District of Columbia (each an &ldquo;Eligible Voter&rdquo;) and eighteen (18) years of age or older as of 1/6/14. Employees, officers, directors, agents and representatives of ESPN Internet Ventures (&ldquo;Sponsor&rdquo;); Infiniti, a Division of Nissan North America, Inc. (&ldquo;Infiniti&rdquo;); and each of their respective parent companies, subsidiaries, affiliates, advertising/promotion/fulfillment agencies and anyone else connected with the production and distribution of this Challenge (hereafter, collectively &ldquo;Released Parties&rdquo;) and their immediate families (spouse, parent, child, sibling and their respective spouses, regardless of where they reside) and those living in their same household, whether or not related, are not eligible to vote. Challenge is void where prohibited by law. Challenge is subject to all applicable federal, state and local laws. To participate, participant must be a member of ESPN.com or one of its family of sites (e.g., ABC.com, ABCNEWS.com, Disney Online, ESPN.com, Family.com). Registration is free. If participant is not a member, participant may register by clicking on the link as indicated on the Challenge promotional page and following the instructions. Participant will be asked to provide his or her name, complete address, email address, telephone number (area code included), birth date, gender and to select a password.</p>
+        <p>To vote for a Coach/Designated Charity (defined below) during the Voting Period (also defined below) in The Infiniti Coaches&rsquo; Charity Challenge (&ldquo;Challenge&rdquo;), you must be a legal resident of the fifty (50) United States or the District of Columbia (each an &ldquo;Eligible Voter&rdquo;) and eighteen (18) years of age or older as of 1/4/16. Employees, officers, directors, agents and representatives of ESPN Internet Ventures (&ldquo;Sponsor&rdquo;) and each of its respective parent companies, subsidiaries, affiliates, advertising/promotion/fulfillment agencies and anyone else connected with the production and distribution of this Challenge (hereafter, collectively &ldquo;Released Parties&rdquo;) and their immediate families (spouse, parent, child, sibling and their respective spouses, regardless of where they reside) and those living in their same household, whether or not related, are not eligible to vote. Challenge is void where prohibited by law. Challenge is subject to all applicable federal, state and local laws. To participate, participant must be a member of ESPN.com or one of its family of sites (e.g., ABC.com, ABCNEWS.com, Disney Online, ESPN.com, Family.com). Registration is free. If participant is not a member, participant may register by clicking on the link as indicated on the Challenge promotional page and following the instructions. Participant will be asked to provide his or her name, complete address, email address, telephone number (area code included), birth date, gender and to select a password.</p>
         <h4 class="section-heading sub-heading">How to Vote</h4>
-        <p>Between 3:00 PM Eastern Time (&ldquo;ET&rdquo;) on 1/6/14 and 11:59 AM ET on 1/26/14 (&ldquo;Voting Period&rdquo;), forty-eight (48) college basketball Coaches (each a &ldquo;Coach&rdquo; and collectively &ldquo;Coaches&rdquo;) along with their designated charity (each a &ldquo;Designated Charity&rdquo; and collectively &ldquo;Designated Charities&rdquo;) will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; To vote for a college basketball Coach and his Designated Charity visit <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, search for keyword &ldquo;Infiniti,&rdquo; complete the ESPN.com member sign-in and follow the instructions provided to complete and submit the voting form. The voting will be determined by Sponsor in its sole and absolute discretion. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day (24-hours from 12:00 AM EST) for the duration of the Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void. If a participant votes by accessing the ESPN mobile site, message and data rates may apply, depending on participant&rsquo;s individual wireless pricing plan, in accordance with his/her wireless customer agreement. Check carrier for details. Mobile Web service may not be available in all areas. The twenty-four (24) Coaches and their Designated Charities that receive the most votes during the Voting Period will be eligible for the Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period.</p>
+        <p>Between 3:00 PM Eastern Time (&ldquo;ET&rdquo;) on 1/4/16 and 11:59 AM ET on 1/24/16 (&ldquo;Voting Period&rdquo;), forty-eight (48) college basketball Coaches (each a &ldquo;Coach&rdquo; and collectively &ldquo;Coaches&rdquo;) along with their designated charity (each a &ldquo;Designated Charity&rdquo; and collectively &ldquo;Designated Charities&rdquo;) will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; To vote for a college basketball Coach and his Designated Charity visit <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, search for keyword &ldquo;Infiniti,&rdquo; complete the ESPN.com member sign-in and follow the instructions provided to complete and submit the voting form. The voting will be determined by Sponsor in its sole and absolute discretion. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day (24-hours from 12:00 AM EST) for the duration of the Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void. If a participant votes by accessing the ESPN mobile site, message and data rates may apply, depending on participant&rsquo;s individual wireless pricing plan, in accordance with his/her wireless customer agreement. Check carrier for details. Mobile Web service may not be available in all areas. The twenty-four (24) Coaches and their Designated Charities that receive the most votes during the Voting Period will be eligible for the Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period.</p>
         <h4 class="section-heading sub-heading">Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period</h4>
-        <p>The twenty four (24) Coaches and their Designated Charities that receive the most votes throughout the duration of the Voting Period, as determined by Sponsor in its sole discretion, will become Round 2 Coaches and will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Round 2 Coaches between 1:00 PM ET on 1/27/14 and 11:59 AM ET on 2/16/14 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 1/27/14. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
+        <p>The twenty four (24) Coaches and their Designated Charities that receive the most votes throughout the duration of the Voting Period, as determined by Sponsor in its sole discretion, will become Round 2 Coaches and will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Round 2 Coaches between 1:00 PM ET on 1/25/16 and 11:59 AM ET on 2/14/16 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 1/25/16. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Round 2 Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
         <h4 class="section-heading sub-heading">Infiniti Coaches&rsquo; Charity Challenge Round 3 Voting Period</h4>
-        <p>The sixteen (16) Coaches and their Designated Charities that receive the most votes throughout the duration of the Round 2 Voting Period, as determined by Sponsor in its sole discretion, will become Round 3 Coaches and will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Round 3 Coaches between 1:00 PM ET on 2/17/14 and 11:59 AM ET on 3/2/14 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Round 3 Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 2/17/14. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Round 3 Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
+        <p>The sixteen (16) Coaches and their Designated Charities that receive the most votes throughout the duration of the Round 2 Voting Period, as determined by Sponsor in its sole discretion, will become Round 3 Coaches and will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Round 3 Coaches between 1:00 PM ET on 2/15/16 and 11:59 AM ET on 2/29/16 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Round 3 Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 2/16/16. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Round 3 Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
         <h4 class="section-heading sub-heading">Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period</h4>
-        <p>The four (4) Coaches and their Designated Charities that receive the most votes throughout the duration of the Round 3 Voting Period, as determined by Sponsor in its sole discretion, (each a &ldquo;Finalist&rdquo;) will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Finalists between 1:00 PM ET on 3/3/14 and 11:59 AM ET on 3/16/14 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 3/3/14. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
+        <p>The four (4) Coaches and their Designated Charities that receive the most votes throughout the duration of the Round 3 Voting Period, as determined by Sponsor in its sole discretion, (each a &ldquo;Finalist&rdquo;) will be profiled on <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, keyword &ldquo;Infiniti.&rdquo; Eligible Voters can vote for the Finalists between 1:00 PM ET on 2/29/16 and 11:59 AM ET on 3/13/16 (&ldquo;Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period&rdquo;). Voting is open to Eligible Voters who are eighteen (18) years of age or older as of 2/29/16. There is a limit of one (1) vote per person, per e-mail address, per ESPN registrant, per day for the duration of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period. Additional votes received beyond the specified limit or votes generated by script, macro or other automated means or with the intent to affect the integrity of the voting process will be void.</p>
         <h4 class="section-heading sub-heading">Winning Coach/Charity Selection</h4>
-        <p>The Finalist Coach and his Designated Charity that receives the most votes throughout the duration of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period (as determined by Sponsor in its sole discretion) will be deemed the Infiniti Coaches&rsquo; Charity Challenge Winner (subject to these Official Terms). In the event of a tie for the Infiniti Coaches&rsquo; Charity Challenge Winner, there will be another day of voting (one 24-hour period) added to the end of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period, when eligible voters can vote for only the tied Finalist Coaches and their Designated Charities and the Finalist Coach/Designated Charity that receives the most votes during this 24-hour period will be determined the Infiniti Coaches&rsquo; Charity Challenge Winner (subject to these Official Terms).</p>
+        <p>The Finalist Coach and his Designated Charity that receives the most votes throughout the duration of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period (as determined by Sponsor in its sole discretion) will be deemed the Infiniti Coaches&rsquo; Charity Challenge Winner (subject to these Official Terms). In the event of a tie for the Infiniti Coaches&rsquo; Charity Challenge Winner, there will be another day of voting (one 24-hour period) added to the end of the Infiniti Coaches&rsquo; Charity Challenge Finalist Voting Period, when eligible voters can vote for only the tied Finalist Coaches and their Designated Charities and the Finalist Coach/Designated Charity that receives the most votes during this 24-hour period will be determined the Infiniti Coaches&rsquo; Charity Challenge Winner (subject to these Official Terms). <span style="text-decoration: underline;">The Winning Coach from the 2016 Challenge agrees to forego participation in the following year’s Infiniti Coaches Charity Challenge program, but will be eligible to participate again after sitting out for one year.</span></p>
         <h4 class="section-heading sub-heading">Infiniti Coaches&rsquo; Charity Challenge Donations</h4>
         <p>The Finalist Coach&rsquo;s Designated Charity that receives the most votes will be deemed the Infiniti Coaches&rsquo; Charity Challenge Winner and will receive a donation in the amount of <sup>$</sup>100,000 (subject to confirmation). The forty-seven (47) remaining Coaches&rsquo; Designated Charities will receive a donation in the amount of <sup>$</sup>1,000 per coach eliminated in Round 1, <sup>$</sup>7,500 per Coach eliminated in Round 2, <sup>$</sup>10,000 per Coach eliminated in Round 3, <sup>$</sup>15,000 per Coach eliminated in Round 4, and <sup>$</sup>100,000 for the Finalist Coach. Donations will be awarded directly to the Designated Charities, and not to the Coaches. Total value of all donations to be awarded in this Challenge: <sup>$</sup>349,000.</p>
         <h4 class="section-heading sub-heading">General Charity Donation Conditions &amp; Details</h4>
@@ -185,10 +182,10 @@
         <h4 class="section-heading sub-heading">Privacy</h4>
         <p>Personally identifiable information that is submitted by participants as part of this Challenge will be used to administer the Challenge and will be treated in accordance with Sponsor&rsquo;s privacy policy, accessible on its website at <a href="http://www.espn.com" title="www.espn.com" target="_blank">www.espn.com</a>, and Infiniti&rsquo;s privacy policy, accessible at (<a href="http://www.infinitiusa.com/global/privacy.html" target="_blank">http://www.infinitiusa.com/global/privacy.html</a>).</p>
         <h4 class="section-heading sub-heading">Winner&rsquo;s List</h4>
-        <p>For the name of the Infiniti Coaches&rsquo; Charity Challenge Winner (available after 3/30/14), send a self-addressed, stamped envelope for receipt by 4/16/14 to: The Infiniti Coaches&rsquo; Charity Challenge Winners, Project Support Team, 6 Berkshire Blvd., Bethel, CT 06801.</p>
-        <p>The Challenge and all accompanying materials are copyright &copy;2014 ESPN Internet Ventures.</p>
+        <p>For the name of the Infiniti Coaches&rsquo; Charity Challenge Winner (available after 3/30/16), send a self-addressed, stamped envelope for receipt by 4/15/16 to: The Infiniti Coaches&rsquo; Charity Challenge Winners, Project Support Team, 6 Berkshire Blvd., Bethel, CT 06801.</p>
+        <p>The Challenge and all accompanying materials are copyright &copy;2016 ESPN Internet Ventures.</p>
         <h4 class="section-heading sub-heading">Sponsor</h4>
-        <p>ESPN Internet Ventures, E. 34th Street, New York, NY 10016.</p>
+        <p>ESPN Internet Ventures, 77 West 66th Street, New York, NY 10023.</p>
       </div>
     </div>
     
@@ -212,7 +209,7 @@
       <div class="col-xs-12 col-sm-8">
         <div class="copy-container">
           <div class="copy center-block">
-            <p class="summary"><span class="no-purchase">No purchase necessary. Void where prohibitied.</span> Must be a legal resident of the 50 U.S. or DC, 18 years of age or older and a member of ESPN.com to participate. Voting period takes place between 3:00 PM ET on Jan 6, 2014 and 11:59 AM ET on March 16, 2014. Void where prohibited. Click here for <a href="./rules.html">Official Terms</a>, which govern, and complete details. Sponsor: ESPN Internet Ventures.</p>
+            <p class="summary"><span class="no-purchase">No purchase necessary. Void where prohibitied.</span> Must be a legal resident of the 50 U.S. or DC, 18 years of age or older and a member of ESPN.com to participate. Voting period takes place between 3:00 PM ET on Jan 4, 2016 and 11:59 AM ET on March 13, 2016. Void where prohibited. Click here for <a href="./rules.html">Official Terms</a>, which govern, and complete details. Sponsor: ESPN Internet Ventures.</p>
             <p class="links"><span class="link-label">ESPN.com:</span>
               <a href="">Help</a> | 
               <a href="">Media Kit</a> | 
@@ -288,7 +285,10 @@
   
   <!-- build:js scripts/main.js -->
   <script src="scripts/ballot.js" type="text/javascript"></script>
+  <script src="scripts/coaches.js" type="text/javascript"></script>
   <script src="scripts/main.js" type="text/javascript"></script>
+  <script src="scripts/search.js" type="text/javascript"></script>
+  <script src="scripts/jquery.hideseek.min.js" type="text/javascript"></script>
   <!-- endbuild -->
   
   <!-- build:js scripts/plugins.js -->

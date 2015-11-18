@@ -2,26 +2,147 @@
   float: left;
   clear: left;
   width: 100%;
-  background-color: #f6dfb5;
-  background-image: url($image-path + "bg_carousel.jpg");
+  background-color: $ccc-black;
+  background-image: url($image-path + 'video_bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-bottom: 6px solid $ccc-white; 
+  //border-bottom: 6px solid $ccc-white; 
+  //border-top: $ccc-red 2px solid !important;
   
   .carousel {
+    border-top: $ccc-black 2px solid;
+    border-bottom: $ccc-black 5px solid;
     
     .carousel-control {
       display: none;
+    }
+
+    .video-background {
+      background-color: $ccc-black;
+      padding: 0;
+      .video {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .infographic1-background {
+      width: 100%;
+      background-color: #100e0e;
+      margin: 0 !important;
+      padding: 0 !important;
+
+      .infographic1 {
+
+      }
+
+      .infographic1-image {
+        width: 100%;
+        height: 100%;
+        background-image: url($image-path + 'infographic_bg1.jpg');
+        //background-image: url($image-path + 'infographic1_bg_v2.jpg');
+        background-position: center;
+        //background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        //margin: 0 !important;
+        //padding: 0 !important;
+      }
     }
     
     .item {
       padding: 20px;
       height: 375px;
       
-      @media (max-width: $screen-sm-max){
+      @media (max-width: $screen-xs-max){
         height: 325px;
       }
+    }
+  }
+
+  .slide-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+
+
+    @media (min-width: $screen-sm-min){
+      margin-top: 15px;
+    }
+
+    @media (min-width: $screen-md-min){
+      margin-top: 25px;
+    }
+
+    .video-title {
+      color: $ccc-white;
+      font-size: 55px;
+      font-family: $ccc-meta-pro-bold-font-family;
+      font-weight: 900;
+      font-style: normal;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      line-height: 45px;
+
+      @media screen and (max-width: 420px) and (min-width: 0px) {
+        font-size: 35px;
+      }
+
+      @media screen and (max-width: 500px) and (min-width: 421px) {
+        font-size: 45px;
+      }
+
+      @media (min-width: $screen-sm-min){
+        margin-bottom: 5px;
+        font-size: 75px;
+        line-height: initial;
+      }
+
+      @media (min-width: $screen-md-min){
+        font-size: 95px;
+      }
+    }
+
+    .video-description {
+      color: $ccc-white;
+      font-family: $ccc-meta-pro-bold-font-family;
+      font-weight: 900;
+      font-style: normal;
+      margin-bottom: 30px;
+
+      @media (max-width: $screen-sm-min){
+        //margin-bottom: 15px;
+      }
+
+    }
+
+    .video-button {
+      background: $ccc-white;
+      color: $ccc-black;
+      font-family: $ccc-meta-pro-bold-font-family;
+      font-weight: 900;
+      font-style: normal;
+      text-transform: uppercase;
+      padding: 10px 40px;
+
+      &:hover,
+      &:active {
+        background: $ccc-white !important;
+        color: #6c6c6c !important;
+      }
+
+    }
+  }
+
+  .video-player-container {
+    @media (max-width: $screen-xs-max){
+      top:10%;
+    }
+
+    @media (max-width: $screen-xs-min){
+      top:25%;
     }
   }
   
@@ -30,7 +151,13 @@
     height: 315px;
     padding: 10px 0;
     
-    @media (max-width: $screen-sm-max){
+    @media (max-width: $screen-xs-max){
+      width: 100%;
+      height: 225px;
+      padding: 0px;
+    }
+
+    @media (max-width: $screen-xs-min){
       width: 100%;
       height: auto;
       padding: 0px;

@@ -1,5 +1,11 @@
 $navbar-link-font-family: $ccc-didot-font-family;
 
+nav {
+  @media (min-width: $screen-sm-min){
+    border-bottom: $ccc-red 2px solid !important;
+  }
+}
+
 .header {
   background-color: $ccc-header-bg;
   background-image: none;
@@ -61,6 +67,12 @@ $navbar-link-font-family: $ccc-didot-font-family;
       @media (max-width: $screen-xs-max){
         font-size: 16px;
         line-height: 16px;
+      }
+    }
+
+    @media(min-width: $screen-sm-min) {
+      .left-padding-less {
+        padding-left: 0;
       }
     }
   }
@@ -129,6 +141,16 @@ $navbar-link-font-family: $ccc-didot-font-family;
         }
       }
     }
+
+    .float-right {
+      float: right;
+    }
+
+    @media(min-width: $screen-sm-min) {
+      .right-padding-less {
+        padding-right: 0;
+      }
+    }
   }
   
   .title-container {
@@ -147,8 +169,8 @@ $navbar-link-font-family: $ccc-didot-font-family;
   }
   
   .lockup-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 15px;
     
     @media (max-width: $screen-sm-max){
       padding-top: 30px;
@@ -165,6 +187,12 @@ $navbar-link-font-family: $ccc-didot-font-family;
     font-size: 8px;
     font-weight: 400;
   }
+
+  @media (min-width: $screen-lg-min) {
+    .text-right {
+      text-align: right !important;
+    }
+  }
   
   .branding {
     font-size: inherit;
@@ -180,25 +208,52 @@ $navbar-link-font-family: $ccc-didot-font-family;
 }
 
 .navbar {
-  
-  .social a {
-    display: block;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: transparent !important;
-  
-    &.facebook { 
-      width: 14px;
-      height: 28px;
-      background-image: url($image-path + 'icon_facebook.png'); 
+
+  .social-icons {
+    float: right;
+    padding-right: 10px;
+    /*position: relative;*/
+    /*bottom: 4px;*/
+    //margin-top: -8px;
+
+    .social {
+      display: inline-block;
+      /*padding: 0px !important;*/
     }
-  
-    &.twitter {
-      width: 30px;
-      height: 24px;
-      background-image: url($image-path + 'icon_twitter.png'); 
+
+    .fa-circle {
+      color: $ccc-black;
+      position: relative;
+      top: 5px;
+    }
+
+    .fa-facebook {
+      color: $ccc-white;
+      position: relative;
+      margin-left: -16px;
+      bottom: -1px;
+
+      @media (min-width: $screen-md-min){
+        margin-left: -18px;
+      }
+    }
+
+    .fa-twitter {
+      color: $ccc-white;
+      position: relative;
+      margin-left: -18px;
+      bottom: -1px;
+
+      @media (min-width: $screen-md-min){
+        margin-left: -20px;
+      }
+    }
+
+    .fa-2x {
+      font-size: 1.75em;
     }
   }
+  
   
   &.hidden-xs {
     float: left;
@@ -214,34 +269,33 @@ $navbar-link-font-family: $ccc-didot-font-family;
     
     .navbar-nav {
       float: none !important;
-      width: $screen-md-min;
+      //width: 82%;
       height: inherit;
       line-height: inherit;
       
       li {
         width: auto;
         height: inherit;
-        padding: 0px 10px;
-        border-right: 1px solid transparentize($ccc-light-grey, 0.5);
+        padding: 0px 40px 0px 0px;
         line-height: inherit;
-        text-align: center;
+        text-align: left;
         
         a {
           margin: 10px 15px;
           padding: 0;
-          height: 30px;
+          height: 42px;
           line-height: 30px;
-          color: white;
-          font-family: $navbar-link-font-family;
+          color: $ccc-black;
+          font-family: $ccc-meta-pro-bold-font-family;
           font-size: 17px;
-          font-weight: 300;
+          font-weight: 900;
           font-style: normal;
           text-transform: uppercase;
           
           &:hover,
           &:active {
             background-color: inherit;
-            color: $ccc-accent;
+            color: #6c6c6c;
           }
           
           @media (max-width: $screen-sm-max){
@@ -252,7 +306,7 @@ $navbar-link-font-family: $ccc-didot-font-family;
         
         &.active a {
           background-color: inherit;
-          border-bottom: 2px solid $ccc-accent;
+          color: #6c6c6c;
         }
       }
       
@@ -290,12 +344,85 @@ $navbar-link-font-family: $ccc-didot-font-family;
         }
       }
     }
+
+    .social a {
+      display: block;
+      //background-position: center;
+      //background-repeat: no-repeat;
+      //color: transparent !important;
+    
+      &.facebook { 
+        //color: $ccc-white;
+        position: absolute;
+        //width: 42px;
+        /*width: 75%;*/
+        /*margin: 0 !important;*/
+        top: -6px;
+        //background-image: url('/images/2016/icon_facebook.png'); 
+
+        &:hover {
+          .fa-circle {
+            color: #6c6c6c;
+          }
+        }
+
+      }
+
+      &.twitter {
+        //width: 42px;
+        /*margin: 0 !important;*/
+        /*background-size: 75%;*/
+        /*background-image: url('/images/2016/icon_twitter.png'); */
+        position: absolute;
+        top: -6px;
+
+        &:hover {
+          .fa-circle {
+            color: #6c6c6c;
+          }
+        }
+      }
+    }
   }
   
   &.visible-xs {
-    .social a {
+/*    .mobile-social a {
       margin: 10px 15px;
       padding: 0px;
+    }*/
+
+    .mobile-social {
+      padding-top: 4px;
+      a {
+        padding: 0 0 0 10px;
+      }
+
+      &.twitter-mobile {
+        padding-top: 10px;
+      }
+
+      .fa-circle {
+        position: relative;
+      }
+      .fa-facebook {
+        color: $ccc-white;
+        position: relative;
+        right: 16px;
+        bottom: 5px;
+      }
+      .fa-twitter {
+        color: $ccc-white;
+        position: relative;
+        right: 18px;
+        bottom: 5px;
+      }
+    }
+
+    .nav {
+      li {
+        text-align: center;
+
+      }
     }
   }
   
@@ -304,3 +431,8 @@ $navbar-link-font-family: $ccc-didot-font-family;
     z-index: 9999;
   }
 }
+
+.navbar-default .navbar-nav > li > a {
+  color: $ccc-black;
+}
+

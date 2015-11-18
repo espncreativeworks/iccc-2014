@@ -1,6 +1,6 @@
-$coach-name-font-family: 'Didot 06 A', 'Didot 06 B';
-$charity-name-font-family: $ccc-meta-pro-book-font-family;
-$school-name-font-family: $ccc-meta-pro-book-font-family;
+$coach-name-font-family: $ccc-meta-pro-bold-font-family;
+$charity-name-font-family: $ccc-meta-pro-bold-font-family;
+$school-name-font-family: $ccc-meta-pro-bold-font-family;
 $money-progress-height: 6px;
 $vote-progress-height: 18px;
 $star-default-color: $ccc-primary;
@@ -45,7 +45,7 @@ $star-selected-color: #caa45f;
     .social.facebook {
       width: 14px;
       height: 28px;
-      background-image: url($image-path + 'icon_facebook_dark.png'); 
+      background-image: url('/images/2016/icon_facebook.png'); 
     }
     
     .social.twitter {
@@ -53,14 +53,38 @@ $star-selected-color: #caa45f;
       height: 24px;
       margin-top: 2px;
       margin-bottom: 2px;
-      background-image: url($image-path + 'icon_twitter_dark.png'); 
+      background-image: url('/images/2016/icon_twitter.png'); 
     }
     
     .separator {
-      width: 2px;
+      width: 30px;
       height: 28px;
       margin: 0px 14px;
       border-right: 1px solid $ccc-primary;
+    }
+
+    .fa-circle {
+      color: $ccc-black;
+      position: absolute;
+      top: 9px;
+    }
+
+    .fa-facebook {
+      color: $ccc-white;
+      position: absolute;
+      bottom: 22px;
+      padding-left: 9px;
+    }
+
+    .fa-twitter {
+      color: $ccc-white;
+      position: absolute;
+      bottom: 21px;
+      padding-left: 7px;
+    }
+
+    .fa-3x {
+      font-size: 2.5em;
     }
   }
   
