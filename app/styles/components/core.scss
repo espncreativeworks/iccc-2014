@@ -92,3 +92,33 @@ a:hover {
   color: #6c6c6c !important;
   text-decoration: none !important;
 }
+
+.btn-ccc {
+  background: $ccc-black;
+  color: $ccc-white;
+  font-family: $ccc-meta-pro-bold-font-family;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+  &:hover, 
+  &:active {
+    color: #6c6c6c !important;
+    background-color: $ccc-black !important;
+    text-decoration: none !important;
+  }
+}
+
+.optin-copy {
+  a {
+    color: #6c6c6c !important;
+
+    &:hover, 
+    &:active {
+      color: #b6b6b6 !important;
+    }
+  }
+}

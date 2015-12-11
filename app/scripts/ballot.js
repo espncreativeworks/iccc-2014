@@ -106,16 +106,16 @@ jQuery(document).ready(function($){
     
     $('#masthead-carousel').carousel();
     
-    if (typeof data.lastVisit === 'undefined' || parseInt(params['masthead'], 10) === 1){
-      disableCollapse({ showTarget: true });
-    }
+    // if (typeof data.lastVisit === 'undefined' || parseInt(params['masthead'], 10) === 1){
+    //   disableCollapse({ showTarget: true });
+    // }
     
     data.lastVisit = Date.now();
     $.cookie('iccc', data, expiration);
     
-    $('[data-target="#masthead-carousel"][data-toggle="collapse"]').on('click', function(){
-      return disableCollapse({ showTarget: false });
-    });
+    // $('[data-target="#masthead-carousel"][data-toggle="collapse"]').on('click', function(){
+    //   return disableCollapse({ showTarget: false });
+    // });
     
     initVideoPlayers();
     autoslide();

@@ -227,29 +227,36 @@ jQuery(document).ready(function($){
     var $this = $(this)
       , coachId = $this.parents('.ballot-item-container').attr('data-nominee-id')
       , data = $.cookie('iccc') || {}
+      , coachIdData = $.cookie('iccc-coachID') || {}
+      , mediumData = $.cookie('iccc-medium') || {}
       , expiration = new Date(window.ballot.endDate)
     ;
     
-    if (typeof data.coachIds === 'undefined'){
-      //data.coachIds = [coachId];
-      data.coachIds = coachId;
-      if (Modernizr.touch) {
-        data.medium = "mobile";
-      } else {
-        data.medium = "desktop";
-      }
-    } else {
+
+    if (typeof data.coachIds == 'undefined'){
+      data.coachIds = [coachId];
+      //data.coachIds = [];
       //data.coachIds.push(coachId);
-      data.coachIds = coachId;
-      if (Modernizr.touch) {
-        data.medium = "mobile";
-      } else {
-        data.medium = "desktop";
-      }
+    } else {
+      data.coachIds.push(coachId);
     }
+
     
     data.lastVoted = Date.now();
     $.cookie('iccc', data, { expires: expiration });
+
+    coachIdData = coachId;
+
+    if (Modernizr.touch) {
+      mediumData = "mobile";
+    } else {
+      mediumData = "desktop";
+    }
+
+    $.cookie('iccc-coachID', coachIdData , { expires: expiration });
+    $.cookie('iccc-medium', mediumData, { expires: expiration });
+
+
     //debug.dir($.cookie('iccc'));
     
     /*

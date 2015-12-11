@@ -173,6 +173,25 @@ input[type="button"] {
 }
 */
 
+.btn-ccc {
+  background: $ccc-black;
+  color: $ccc-white;
+  font-family: $ccc-meta-pro-bold-font-family;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover, 
+  &:active {
+    color: #6c6c6c !important;
+    background-color: $ccc-black !important;
+    text-decoration: none !important;
+  }
+}
+
 [data-control-action="share"],
 [data-control-action="submit-vote"] {
   width: 50%;

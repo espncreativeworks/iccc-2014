@@ -179,9 +179,8 @@ $star-selected-color: #caa45f;
     background-image: url($image-path + 'bg_thumbnail.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    //@include gradient-radial($ccc-body-gradient-end, $ccc-body-gradient-start);
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
 
     @media (min-width: $screen-sm-min){
       background-size: cover;
@@ -189,8 +188,8 @@ $star-selected-color: #caa45f;
     
     &:hover,
     &:active{
-      -webkit-filter: grayscale(0%);
-      filter: grayscale(0%);
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
     }
 
     .thumbnail {
@@ -204,13 +203,13 @@ $star-selected-color: #caa45f;
       @include border-radius(0px);
       background-position: center bottom;
       background-repeat: no-repeat;
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%);
+      
       &:hover,
       &:active{
-        -webkit-filter: grayscale(0%);
-        filter: grayscale(0%);
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
       }
     }
   }
