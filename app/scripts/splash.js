@@ -57,7 +57,7 @@ jQuery(document).ready(function($){
   }
   
   function init(){
-    var startDate = new Date(Date.UTC(2015,0,5,20,0,0));
+    var startDate = new Date(Date.UTC(2016,0,4,20,0,0));
     initCountdown(startDate);
     reqisterMediaQueries();
     return $('body').removeClass('loading').addClass('loaded');

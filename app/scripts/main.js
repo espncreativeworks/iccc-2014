@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
     name: 'Infiniti Coaches Charity Challenge',
     link: 'http://promo.espn.go.com/espn/contests/infiniti/2016/',
     picture: 'http://a.espncdn.com/contests/infiniti/2016/coaches-charity-challenge/display/180x180.jpg',
-    caption: 'http://es.pn/1aSRogz',
+    caption: 'http://es.pn/1O9xe5G',
     description: 'Coaches are competing to win up to $100,000 for charity. Raise votes for your coach by promoting him through social media and e-mail. Visit http://espn.com/infiniti to get started!'
   };
   
@@ -78,7 +78,7 @@ jQuery(document).ready(function($){
   function onslid(){
     slidesShown++;
     if (slidesShown === $('#masthead-carousel .item').length){
-      //$('#masthead-carousel').carousel('pause');
+      $('#masthead-carousel').carousel(0);
     } 
   }
   
@@ -287,7 +287,6 @@ jQuery(document).ready(function($){
       //var dsrc = $('iframe.video').data("src");
       $('iframe.video').attr('src',dsrc);
     } else {
-      $('iframe.video').attr('src',"");
     } 
   });
   

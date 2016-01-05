@@ -66,6 +66,13 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
       padding-bottom: 16px;
       font-weight: 900;
     }
+
+    @media (max-width: $screen-sm-max){
+      font-size: 14px !important;
+      line-height: 14px !important;
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
     
     h4 {
       font-family: inherit;
@@ -114,12 +121,12 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
       font-family: $ccc-meta-pro-bold-font-family;
       font-weight: 900;
 
-      @media (max-width: $screen-xs-max){
-        font-size: 16px;
+      @media (max-width: $screen-sm-max){
+        font-size: 12px;
       }
 
       @media (min-width: $screen-md-min){
-        font-size: 16px;
+        font-size: 14px;
       }
       
       &.text-smaller {
@@ -225,6 +232,10 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
       font-weight: 900;
       text-transform: uppercase;
 
+      @media (max-width: $screen-sm-max){
+        font-size: 14px !important;
+      }
+
 
       .panel-heading {
         padding-top: 0;
@@ -243,6 +254,10 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
             height: inherit;
             /*color: $ccc-white;*/
             /*text-align: left;*/
+
+            @media (max-width: $screen-sm-max){
+              font-size: 14px !important;
+            }
                       
             span {
               line-height: inherit;
@@ -300,6 +315,10 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
     
     .sorting-controls {
       height: auto;
+
+      @media (max-width: $screen-sm-max){
+        font-size: 14px;
+      }
     }
   
     .panel {
@@ -345,6 +364,10 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
 /*          width: 100%;
           height: inherit;
           color: inherit;*/
+
+          @media (max-width: $screen-sm-max){
+              font-size: 14px !important;
+            }
                   
           [data-toggle="collapse"] {
             display: block;
@@ -382,6 +405,10 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
                 &.current-value {
                   color: $ccc-white;
                   text-transform: uppercase;
+
+                  @media (max-width: $screen-sm-max){
+                    padding-left: 20px;
+                  }
                 }
               }
               &.caret {

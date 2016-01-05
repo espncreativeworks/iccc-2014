@@ -31,7 +31,43 @@ html.wizard {
       padding-top: 20px;
       padding-bottom: 20px;
     }
+
+    @media (max-width: $screen-xs-max){
+      .masthead {
+        display: none !important;
+      }
+
+      header {
+        border-bottom: $ccc-black 1px solid;
+      }
+    }
   }
+
+  #confirm {
+    @media (max-width: $screen-xs-max){
+      .masthead {
+        display: none !important;
+      }
+
+      header {
+        border-bottom: $ccc-black 1px solid;
+      }
+    }
+
+  }
+
+  .authentication-container {
+
+    @media (max-width: $screen-xs-max){
+      font-size: 12px !important;
+
+      .control-group {
+        display: inline-block !important;
+      }
+    }
+  }
+
+
   
   
   #footer-container {
@@ -50,6 +86,10 @@ html.wizard {
   
   .page-title {
     text-transform: uppercase;
+
+    @media (max-width: $screen-xs-max){
+      font-size: 25px;
+    }
   }
   
   .hidden-wizard { display: none; }

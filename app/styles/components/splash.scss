@@ -9,14 +9,17 @@ $splash-link-color-hover: $splash-link-color-default;
     padding-top: 0px !important;
   }
   
+  .header {
+    border-bottom: 1px $ccc-black solid;
+  }
+
   .masthead {
     min-height: 700px;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-top: 6px solid $ccc-white;
-    border-bottom: none;
-    background-repeat: repeat-y;
+    background-color: $ccc-white;
     text-transform: uppercase;
+    background-image: none !important;
     
   
     h1, h2, h3, h4, h5, h6 {
@@ -38,11 +41,11 @@ $splash-link-color-hover: $splash-link-color-default;
     
     a {
       font-weight: bold;
-      color: $splash-link-color-default !important;
+      color: $ccc-grey !important;
       
       &:hover,
       &:active {
-        color: $splash-link-color-hover !important;
+        color: #bab9b9 !important;
       }
     }
     
@@ -133,6 +136,7 @@ $splash-link-color-hover: $splash-link-color-default;
   
   .copy-container {
     padding-top: 14px;
+    font-family: "Infiniti Meta Pro Book";
   }
   
   .heading.description {

@@ -156,7 +156,7 @@
   
     <div class="row masthead">
       <!-- <div id="masthead-carousel" class="carousel slide collapse"> -->
-      <div id="masthead-carousel" class="carousel slide">
+      <div id="masthead-carousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#masthead-carousel" data-slide-to="0" class="active"></li>
@@ -206,11 +206,13 @@
         </div>
 
         <!-- Controls -->
-        <a class="left carousel-control" href="#masthead-carousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
+        <a class="left carousel-control" href="#masthead-carousel" role="button" data-slide="prev" style="display: initial;">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#masthead-carousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
+        <a class="right carousel-control" href="#masthead-carousel" role="button" data-slide="next" style="display: initial;">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
@@ -811,6 +813,7 @@
   <script src="scripts/ballot.js" type="text/javascript"></script>
   <script src="scripts/coaches.js" type="text/javascript"></script>
   <script src="scripts/search.js" type="text/javascript"></script>
+  <script src="scripts/splash.js" type="text/javascript"></script>
   <script src="scripts/jquery.hideseek.min.js" type="text/javascript"></script>
   <script src="scripts/main.js" type="text/javascript"></script>
   <!-- endbuild -->

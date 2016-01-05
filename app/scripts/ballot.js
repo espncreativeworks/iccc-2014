@@ -117,8 +117,8 @@ jQuery(document).ready(function($){
     //   return disableCollapse({ showTarget: false });
     // });
     
-    initVideoPlayers();
-    autoslide();
+    // initVideoPlayers();
+    // autoslide();
   }
   
   function disableCollapse(opts){
@@ -131,29 +131,29 @@ jQuery(document).ready(function($){
     return ;
   }
   
-  function initVideoPlayers(){
-    $('.video-player .video').each(function(){
-      var $this = $(this)
-        // , $container = $this.parent()
-        // , w = parseInt($container.width(), 10)
-        // , h = parseInt($container.height(), 10)
-        //, src = $this.attr('data-src')
-      ;
+  // function initVideoPlayers(){
+  //   $('.video-player .video').each(function(){
+  //     var $this = $(this)
+  //       // , $container = $this.parent()
+  //       // , w = parseInt($container.width(), 10)
+  //       // , h = parseInt($container.height(), 10)
+  //       //, src = $this.attr('data-src')
+  //     ;
       
-      //src = src + '&width=' + w + '&height=' + h;
-      // $this.css({ width: w, height: h }).attr('src', src);
-      //$this.attr('src', src);
-    });
-  }
+  //     //src = src + '&width=' + w + '&height=' + h;
+  //     // $this.css({ width: w, height: h }).attr('src', src);
+  //     //$this.attr('src', src);
+  //   });
+  // }
   
-  function autoslide(){
-    var params = window.location.uri.search(true);
-    if (params['slide'] && parseInt(params['slide'], 10) === 1){
-      $('#masthead-carousel').carousel('next');
-      //$('#masthead-carousel .carousel-indicators').find('[data-slide-to="' + params['slide'] + '"]').trigger('click');
-      //$('#masthead-carousel').carousel('cycle');
-    }
-  }  
+  // function autoslide(){
+  //   var params = window.location.uri.search(true);
+  //   if (params['slide'] && parseInt(params['slide'], 10) === 1){
+  //     $('#masthead-carousel').carousel('next');
+  //     //$('#masthead-carousel .carousel-indicators').find('[data-slide-to="' + params['slide'] + '"]').trigger('click');
+  //     //$('#masthead-carousel').carousel('cycle');
+  //   }
+  // }  
   
   function loadBallot(){
     var settings = {

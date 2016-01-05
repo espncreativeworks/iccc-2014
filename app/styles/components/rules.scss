@@ -2,6 +2,22 @@ $heading-font-family: $ccc-meta-pro-bold-font-family;
 $heading-border-color: $ccc-body-gradient-end;
 $sub-heading-font-family: $ccc-meta-pro-bold-font-family;
 
+//only for before launch below
+/*#rules {
+  nav {
+    display: none !important;
+  }
+
+  .masthead {
+    display: none !important;
+  }
+
+  header {
+    border-bottom: $ccc-black 1px solid;
+  }
+}*/
+//only for before launch above
+
 #rules-content-container { 
   font-weight: 300;
   a {

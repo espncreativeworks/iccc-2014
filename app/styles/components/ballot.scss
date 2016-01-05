@@ -100,11 +100,15 @@ $star-selected-color: #caa45f;
       height: 100%;
       position: absolute;
       @include transition(transform 400ms);
+      -webkit-transition: transform 400ms;
       @include transform-origin(right center);
+      -webkit-transform-origin: right center;
       @include transform-style(preserve-3d);
+      -webkit-transform-style: preserve-3d;
       
       &.flipped {
         @include flip();
+        -webkit-transform: translateX(-100%) rotateY(180deg);
         
         .front .card-controls {
           visibility: hidden;
@@ -118,10 +122,16 @@ $star-selected-color: #caa45f;
         height: 100%;
         background-color: black; 
         @include backface-visibility(hidden);
+        -webkit-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
       }
-      
+
       .back {
         @include rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
       }
     }
     
@@ -359,6 +369,15 @@ $star-selected-color: #caa45f;
       & > .coach {
 /*        font-family: $coach-name-font-family;*/
         line-height: 35px;
+
+        @media (max-width: $screen-sm-max){
+          font-size: 12px;
+          line-height: 1;
+        }
+
+        @media (max-width: $screen-xs-max){
+          font-size: 11px;
+        }
       }
       
       & > .school {
@@ -374,6 +393,10 @@ $star-selected-color: #caa45f;
         //border: none;
         /*font-family: $charity-name-font-family;*/
         font-size: 10px;
+
+        @media (max-width: $screen-xs-max){
+          width: 80%;
+        }
       }
       
       .personalization-control {
