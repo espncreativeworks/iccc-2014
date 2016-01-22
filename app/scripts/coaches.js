@@ -311,9 +311,9 @@ jQuery(document).ready(function($){
       $template = renderCoaches('#desktop-content-container .active.ballot-item-container.template', filterActive(_coaches));
     }
     
-    if ($('#desktop-content-container .eliminated.ballot-item-container.template').length > 0){
-      $template = renderCoaches('#desktop-content-container .eliminated.ballot-item-container.template', filterInactive(_coaches));
-    }
+    // if ($('#desktop-content-container .eliminated.ballot-item-container.template').length > 0){
+    //   $template = renderCoaches('#desktop-content-container .eliminated.ballot-item-container.template', filterInactive(_coaches));
+    // }
     
     if ($('.leaderboard-item.template').length > 0){
       $template = renderCoaches('.leaderboard-item.template', filterActive(_coaches));
@@ -334,6 +334,14 @@ jQuery(document).ready(function($){
     }  
     
     return $(document).trigger({ type: 'coachesrendered' });
+  });  
+
+  $(document).on('allcoachesloaded', function(evt){
+    var _coaches, $template, coach, ranking;
+    _coaches = window.coaches = addRankings(evt.coaches);
+    if ($('#desktop-content-container .eliminated.ballot-item-container.template').length > 0){
+      $template = renderCoaches('#desktop-content-container .eliminated.ballot-item-container.template', filterInactive(_coaches));
+    }
   });  
   
   $(document).on('coachesrendered', function(){
@@ -623,7 +631,7 @@ jQuery(document).ready(function($){
       cache: false,
       success: function(data){
         $(document).trigger({ type:'ballotloaded', ballot: data });
-        // $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
+        $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
@@ -634,7 +642,7 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: 'api/coaches',
+      url: 'api/coaches/index',
       type: 'GET',
       dataType: 'json',
       data: {
@@ -646,7 +654,7 @@ jQuery(document).ready(function($){
       	console.log('Coaches: ', data);
       	//console.log('Coaches: ', data.coaches);
         //return $(document).trigger({ type:'coachesloaded', coaches: data.coaches });
-        $(document).trigger({ type:'coachesloaded', coaches: data, ballotId: data._id })
+        $(document).trigger({ type:'allcoachesloaded', coaches: data, ballotId: data._id })
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
@@ -656,6 +664,7 @@ jQuery(document).ready(function($){
     return $.ajax(settings);
   }
   
+
   function init(){
     if (!ballot){ loadBallot(); }
     if (!coaches){ loadCoaches(); }
