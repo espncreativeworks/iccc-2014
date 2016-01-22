@@ -642,12 +642,11 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: 'http://iccc-admin.herokuapp.com/api/coaches',
+      url: 'api/coaches/index',
       type: 'GET',
       dataType: 'json',
       data: {
-        active: 1,
-        populate: 'coaches'
+        populate: 'school, charity'
       }, 
       cache: false,
       success: function(data){
