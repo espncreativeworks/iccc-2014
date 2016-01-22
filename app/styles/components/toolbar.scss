@@ -58,6 +58,7 @@ $label-font-family: $ccc-meta-pro-bold-font-family;
     text-align: left;
     color: $ccc-white;
     white-space: nowrap;
+    width: 20%;
   
     @media (max-width: $grid-float-breakpoint){
       font-size: 23px;

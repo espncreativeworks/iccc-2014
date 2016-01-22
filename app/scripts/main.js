@@ -52,7 +52,7 @@ jQuery(document).ready(function($){
     redirect_uri: 'http://promo.espn.go.com/espn/contests/infiniti/2016/',
     name: 'Infiniti Coaches Charity Challenge',
     link: 'http://promo.espn.go.com/espn/contests/infiniti/2016/',
-    picture: 'http://a.espncdn.com/contests/infiniti/2016/coaches-charity-challenge/display/180x180.jpg',
+    picture: 'http://a.espncdn.com/promotions/bsa/apps/infiniti/2016/coaches-charity-challenge/images/display/icon.jpg',
     caption: 'http://es.pn/1O9xe5G',
     description: 'Coaches are competing to win up to $100,000 for charity. Raise votes for your coach by promoting him through social media and e-mail. Visit http://espn.com/infiniti to get started!'
   };
@@ -143,12 +143,47 @@ jQuery(document).ready(function($){
   $('.logo-container.infiniti').on('click', function (e) {
   	ga('send', 'event', 'Header', 'Infiniti Logo', 'Infiniti Logo');
   });
-  
+
   $('[data-btn-action="logout"]').on('click', function (e){
     e.preventDefault();
     espn.memberservices.logout();
     return false;
   });
+
+  //social click events
+  $('.visible-xs li.social .facebook .fa-circle, .hidden-xs li.social .facebook .fa-circle').on('click', function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Facebook - Main', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Facebook - Main', 'Desktop');
+    }
+  });
+
+  $('.visible-xs li.social .twitter .fa-circle, .hidden-xs li.social .twitter .fa-circle').on('click', function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Twitter - Main', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Twitter - Main', 'Desktop');
+    }
+  });
+
+  $('#thanks #thanks-content-container .social-share-container .facebook .fa-circle').on('click', function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Facebook - TY', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Facebook - TY', 'Desktop');
+    }
+  });
+
+  $('#thanks #thanks-content-container .social-share-container .facebook .fa-circle').on('click', function (e) {
+    if (Modernizr.touch){
+      ga('send', 'event', 'Social', 'Twitter - TY', 'Mobile');
+    } else {
+      ga('send', 'event', 'Social', 'Twitter - TY', 'Desktop');
+    }
+  });
+  
+
 
   $('[data-btn-action="submit"], [data-btn-action="reset"]').on('click', function (e){
     var _action = $(e.target).attr('data-btn-action');

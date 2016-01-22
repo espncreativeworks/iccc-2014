@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
   // ---------------- 
   // Options
   // ---------------- 
-  $.cookie.json = true;
+  Cookies.get.json = true;
   window.location.uri = new URI(window.location.href);
   social.fb.opts = {
     method: 'feed',
@@ -208,7 +208,7 @@ jQuery(document).ready(function($){
     
     var $this = $(this)
       , coachId = $this.parents('.ballot-item-container').attr('data-nominee-id')
-      , data = $.cookie('iccc') || {}
+      , data = Cookies.get('iccc') || {}
       , expiration = new Date(window.ballot.endDate);
     
 
@@ -218,7 +218,7 @@ jQuery(document).ready(function($){
       data.favorites.push(coachId);
     }
     
-    $.cookie('iccc', data, { expires: expiration });
+    Cookies.set('iccc', data, { expires: expiration });
     $this.addClass('selected');
   }
   
@@ -226,9 +226,9 @@ jQuery(document).ready(function($){
     
     var $this = $(this)
       , coachId = $this.parents('.ballot-item-container').attr('data-nominee-id')
-      , data = $.cookie('iccc') || {}
-      , coachIdData = $.cookie('iccc-coachID') || {}
-      , mediumData = $.cookie('iccc-medium') || {}
+      , data = Cookies.get('iccc') || {}
+      , coachIdData = Cookies.get('iccc-coachID') || {}
+      , mediumData = Cookies.get('iccc-medium') || {}
       , expiration = new Date(window.ballot.endDate)
     ;
     
@@ -243,7 +243,7 @@ jQuery(document).ready(function($){
 
     
     data.lastVoted = Date.now();
-    $.cookie('iccc', data, { expires: expiration });
+    Cookies.set('iccc', data, { expires: expiration });
 
     coachIdData = coachId;
 
@@ -253,8 +253,8 @@ jQuery(document).ready(function($){
       mediumData = "desktop";
     }
 
-    $.cookie('iccc-coachID', coachIdData , { expires: expiration });
-    $.cookie('iccc-medium', mediumData, { expires: expiration });
+    Cookies.set('iccc-coachID', coachIdData , { expires: expiration });
+    Cookies.set('iccc-medium', mediumData, { expires: expiration });
 
 
     //debug.dir($.cookie('iccc'));
@@ -361,6 +361,7 @@ jQuery(document).ready(function($){
   }
   
   function initThanksSharing(){
+    
     var coach = getCurrentCoach()
     , fbLink = window.location.uri.scheme() + '://' + window.location.uri.hostname() + window.location.uri.directory() + '/' 
     , twttrBaseUrl = 'https://twitter.com/intent/tweet?source=webclient&text='
@@ -557,6 +558,7 @@ jQuery(document).ready(function($){
   }
   
   function filterInactive(data){
+    console.log('Inactive Coaches: ', data);
     var _data =  $.grep(data, function(item){
       return !item.isActive;
     });
@@ -621,7 +623,7 @@ jQuery(document).ready(function($){
       cache: false,
       success: function(data){
         $(document).trigger({ type:'ballotloaded', ballot: data });
-        $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
+        // $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
@@ -632,7 +634,7 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: ballotUrl,
+      url: 'api/coaches',
       type: 'GET',
       dataType: 'json',
       data: {
@@ -641,20 +643,22 @@ jQuery(document).ready(function($){
       }, 
       cache: false,
       success: function(data){
-      	//console.log('Ballot: ', data);
+      	console.log('Coaches: ', data);
       	//console.log('Coaches: ', data.coaches);
-        return $(document).trigger({ type:'coachesloaded', coaches: data.coaches });
+        //return $(document).trigger({ type:'coachesloaded', coaches: data.coaches });
+        $(document).trigger({ type:'coachesloaded', coaches: data, ballotId: data._id })
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
       }
     };
+    console.log('Settings: ', $.ajax(settings));
     return $.ajax(settings);
   }
   
   function init(){
     if (!ballot){ loadBallot(); }
-    //if (!coaches){ loadCoaches(); }
+    if (!coaches){ loadCoaches(); }
   }
   
   init();

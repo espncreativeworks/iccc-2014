@@ -23,7 +23,8 @@ html.wizard {
   }
   
   #thanks-content-container,
-  #authentication-content-container {
+  #authentication-content-container,
+  #watch-content-container {
     padding-top: 40px;
     padding-bottom: 40px;
     
@@ -43,7 +44,8 @@ html.wizard {
     }
   }
 
-  #confirm {
+  #confirm,
+  #watch {
     @media (max-width: $screen-xs-max){
       .masthead {
         display: none !important;
@@ -56,7 +58,8 @@ html.wizard {
 
   }
 
-  .authentication-container {
+  .authentication-container,
+  .watch-container {
 
     @media (max-width: $screen-xs-max){
       font-size: 12px !important;
@@ -94,6 +97,64 @@ html.wizard {
   
   .hidden-wizard { display: none; }
 }
+
+
+#thanks-content-container {
+  background-color: $ccc-white;
+}
+
+#thanks-content-container,
+#authentication-content-container,
+#watch-content-container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  
+  @media (max-width: $screen-sm-max){
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @media (max-width: $screen-xs-max){
+    .masthead {
+      display: none !important;
+    }
+
+    header {
+      border-bottom: $ccc-black 1px solid;
+    }
+  }
+}
+
+#confirm,
+#watch {
+  @media (max-width: $screen-xs-max){
+    .masthead {
+      display: none !important;
+    }
+
+    header {
+      border-bottom: $ccc-black 1px solid;
+    }
+  }
+
+}
+
+.authentication-container,
+.watch-container {
+  padding-top:40px;
+
+  @media (max-width: $screen-xs-max){
+    font-size: 12px !important;
+
+    .control-group {
+      display: inline-block !important;
+    }
+  }
+}
+
+
+
+
 
 html.no-rel {
   

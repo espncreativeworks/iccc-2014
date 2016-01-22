@@ -21,7 +21,7 @@ jQuery(document).ready(function($){
   // ---------------- 
   // Options
   // ---------------- 
-  $.cookie.defaults.json = true;
+  Cookies.get.defaults.json = true;
   window.location.uri = window.location.uri || new URI(window.location.href);
 
   // ---------------- 
@@ -35,7 +35,7 @@ jQuery(document).ready(function($){
     initMasthead();
     initVisualization("1");
     initVotingClosedModal();
-	initVotingNotOpenModal();
+	  initVotingNotOpenModal();
     //return $(document).trigger({ type: 'ballotrendered' });
     
   });  
@@ -72,8 +72,17 @@ jQuery(document).ready(function($){
       , $modal = $('#voting-closed-modal');
       
       $modal.find('[data-ballot="label"]').text(currentLabel);
-      $modal.find('[data-ballot="nextRound.startDate"]').text(comebackDate.toLocaleString());
-    if (Date.now() < _ballot.startedAt || Date.now() > _ballot.endedAt){
+      var c = new Date(comebackDate);
+      var cd= c.toLocaleString().replace(/:\d{2}\s/,' ');
+      $modal.find('[data-ballot="nextRound.startDate"]').text(cd);
+      // console.log(_ballot.startedAt);
+      // console.log(_ballot.endedAt);
+      var d = Date.now()
+      var date = new Date(d);
+      var now = date.toISOString();
+      // console.log(now);
+    if (now < _ballot.startedAt || now > _ballot.endedAt){
+      console.log("Ballot has been closed.");
       $modal.modal({ backdrop: false });
     }
   }
@@ -93,7 +102,7 @@ jQuery(document).ready(function($){
   
   function initVisualization(currentRd){
     return $('.visualization-container .phase').each(function(i){
-      if (i + 1 <= currentRd){
+      if (i + 0 <= currentRd){
         $(this).addClass('in-progress');
       }
     });
@@ -101,7 +110,7 @@ jQuery(document).ready(function($){
   
   function initMasthead(){
     var params = window.location.uri.search(true)
-    , data = $.cookie('iccc') || {}
+    , data = Cookies.get('iccc') || {}
     , expiration = new Date(window.ballot.endDate);
     
     $('#masthead-carousel').carousel();
@@ -111,7 +120,9 @@ jQuery(document).ready(function($){
     // }
     
     data.lastVisit = Date.now();
-    $.cookie('iccc', data, expiration);
+    Cookies.set('iccc', data, expiration);
+      // $.cookie('iccc-coachID', '', expiration);
+      // $.cookie('iccc-medium', '', expiration);
     
     // $('[data-target="#masthead-carousel"][data-toggle="collapse"]').on('click', function(){
     //   return disableCollapse({ showTarget: false });

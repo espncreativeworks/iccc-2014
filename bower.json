@@ -13,7 +13,8 @@
     "uri.js": "~1.11.2",
     "jquery.cookie": "~1.4.0",
     "shadowbox": "~3.0.3",
-    "bootstrap-sass": "~3.3.6"
+    "bootstrap-sass": "~3.3.6",
+    "js-cookie": "~2.1.0"
   },
   "devDependencies": {}
 }
