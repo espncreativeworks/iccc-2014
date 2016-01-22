@@ -642,7 +642,7 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: 'api/coaches/index',
+      url: 'http://iccc-admin.herokuapp.com/api/coaches',
       type: 'GET',
       dataType: 'json',
       data: {
@@ -651,7 +651,7 @@ jQuery(document).ready(function($){
       }, 
       cache: false,
       success: function(data){
-      	console.log('Coaches: ', data);
+      	console.log('All Coaches: ', data);
       	//console.log('Coaches: ', data.coaches);
         //return $(document).trigger({ type:'coachesloaded', coaches: data.coaches });
         $(document).trigger({ type:'allcoachesloaded', coaches: data, ballotId: data._id })
@@ -660,7 +660,7 @@ jQuery(document).ready(function($){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
       }
     };
-    console.log('Settings: ', $.ajax(settings));
+    console.log('Settings: ', (settings));
     return $.ajax(settings);
   }
   
