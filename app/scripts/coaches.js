@@ -531,15 +531,17 @@ jQuery(document).ready(function($){
       return $scope.parent().addClass('active');
     }
   }
-  
+
+
   function addRankings(data){
     var sorted, votes, rankings;
-    
+
     sorted = data.slice().sort(function(a,b){
       return b.totalVotes - a.totalVotes;
     });
-    
+
     votes = sorted.slice().map(function(coach){
+
       return coach.totalVotes;
     });
     
@@ -551,8 +553,10 @@ jQuery(document).ready(function($){
     debug.log(rankings);
     
     $.each(sorted, function(i, item){
+
      // debug.log(item.name.last + ' is ranked ' + rankings[i]);
       item.rank = rankings[i];
+      //console.log("dataID: ", data[i]._id);
     });
     
     return sorted;
@@ -566,8 +570,8 @@ jQuery(document).ready(function($){
   }
   
   function filterInactive(data){
-    console.log('Inactive Coaches: ', data);
     var _data =  $.grep(data, function(item){
+      //console.log('Inactive Coaches: ', _data);
       return !item.isActive;
     });
     return _data;
@@ -588,12 +592,18 @@ jQuery(document).ready(function($){
     //debug.group('Coaches');
     $.each(data, function(i, item){
       //debug.dir(item);
+
       var $itemContainer = $(selector).first().clone(true, true)
         , ranking = item.rank
-        , pct = Math.round((item.totalVotes / (window.ballot.totalVotes * 1.0) * 100), 10)
+        , pct = Math.round( (item.totalVotes / (window.ballot.totalVotes * 1.0) * 100 ), 10)
         , params = { next: 'vote', coachId: item._id, medium: Modernizr.touch ? 'mobile' : 'desktop' }
         , href = $.param(params)
       ;
+
+
+       //console.log("coachID:", item._id);
+      // console.log("Coach Votes:", item.totalVotes);
+      // console.log("PCT:", pct);
       
       $itemContainer.attr('data-nominee-id', item._id);
       $itemContainer.find('.progress-container.money .progress').text('$' + item.donation);
@@ -630,6 +640,7 @@ jQuery(document).ready(function($){
       }, 
       cache: false,
       success: function(data){
+        var adata = alterVotes(data);
         $(document).trigger({ type:'ballotloaded', ballot: data });
         $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
       },
@@ -646,23 +657,60 @@ jQuery(document).ready(function($){
       type: 'GET',
       dataType: 'json',
       data: {
-        populate: 'school, charity'
+        populate: 'school,charity'
       }, 
       cache: false,
       success: function(data){
-      	console.log('All Coaches: ', data);
-      	//console.log('Coaches: ', data.coaches);
+
+        //console.log("adata: ", adata);
+        //console.log("coach data: ", data);
         //return $(document).trigger({ type:'coachesloaded', coaches: data.coaches });
+        // $(document).trigger({ type:'allcoachesloaded', school: data.school, charity: data.charity, coachID: data._id })
         $(document).trigger({ type:'allcoachesloaded', coaches: data, ballotId: data._id })
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
       }
     };
-    console.log('Settings: ', (settings));
+    //console.log('Settings: ', (settings));
     return $.ajax(settings);
   }
   
+  function alterVotes(data) {
+    var jqxhr, _successLOAD, _errorLOAD;
+
+    // console.log("altervotes: ", data);
+
+    var avsettings = {
+      url: 'api/coaches/round48',
+      type: 'GET',
+      dataType: 'json',
+      data: {
+        active: 1
+      }, 
+      cache: false,
+      success: function(rdata){
+        //console.log("total", data);
+        //console.log('round48: ', rdata);
+        
+        $.each(data, function(c) {
+          // console.log("total each: ", c);
+          $.each(rdata, function(rc) {
+            if (data[c]._id == rdata[rc].coachId) {
+              // console.log("match!");
+              data[c].totalVotes = data[c].totalVotes - rdata[rc].totalVotes;
+              // console.log("data votes: " + data[c].totalVotes);
+            }
+            // console.log("r48 each: ", rc);
+          });
+        });
+      },
+      error: function(jqXhr, textStatus, errorThrown){
+        return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
+      }
+    };
+    return $.ajax(avsettings);
+  }
 
   function init(){
     if (!ballot){ loadBallot(); }
