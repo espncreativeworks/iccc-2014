@@ -641,6 +641,8 @@ jQuery(document).ready(function($){
       cache: false,
       success: function(data){
         var adata = alterVotes(data);
+        //console.log("adata: ", adata);
+
         $(document).trigger({ type:'ballotloaded', ballot: data });
         $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
       },
@@ -653,10 +655,12 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
+      //url: 'api/coach/index.json',
       url: 'api/coaches/index',
       type: 'GET',
       dataType: 'json',
       data: {
+        //populate: 'coaches'
         populate: 'school,charity'
       }, 
       cache: false,
@@ -682,6 +686,7 @@ jQuery(document).ready(function($){
     // console.log("altervotes: ", data);
 
     var avsettings = {
+      //url: 'api/coach/round48.json',
       url: 'api/coaches/round48',
       type: 'GET',
       dataType: 'json',
@@ -694,14 +699,14 @@ jQuery(document).ready(function($){
         //console.log('round48: ', rdata);
         
         $.each(data, function(c) {
-          // console.log("total each: ", c);
+          //console.log("total each: ", c);
           $.each(rdata, function(rc) {
             if (data[c]._id == rdata[rc].coachId) {
-              // console.log("match!");
+              //console.log("match!");
               data[c].totalVotes = data[c].totalVotes - rdata[rc].totalVotes;
-              // console.log("data votes: " + data[c].totalVotes);
+              //console.log("data votes: " + data[c].totalVotes);
             }
-            // console.log("r48 each: ", rc);
+            //console.log("r48 each: ", rc);
           });
         });
       },
