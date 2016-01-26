@@ -305,6 +305,9 @@ jQuery(document).ready(function($){
   
   $(document).on('coachesloaded', function(evt){
     var _coaches, $template, coach, ranking;
+
+    console.log("coaches loaded: ", evt.coaches);
+
     _coaches = window.coaches = addRankings(evt.coaches);
     
     if ($('#desktop-content-container .active.ballot-item-container.template').length > 0){
@@ -640,9 +643,11 @@ jQuery(document).ready(function($){
       }, 
       cache: false,
       success: function(data){
-        var adata = alterVotes(data);
-        $(document).trigger({ type:'ballotloaded', ballot: data });
-        $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
+        var av = alterVotes(data);
+
+        // $(document).trigger({ type:'ballotloaded', ballot: data });
+        // $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
+        // $(document).trigger({ type:'coachesloaded', coaches: adata, ballotId: data._id });
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
@@ -653,7 +658,7 @@ jQuery(document).ready(function($){
   
   function loadCoaches(){
     var settings = {
-      url: 'api/coaches/index',
+      url: 'api/coach/index.json',
       type: 'GET',
       dataType: 'json',
       data: {
@@ -679,10 +684,10 @@ jQuery(document).ready(function($){
   function alterVotes(data) {
     var jqxhr, _successLOAD, _errorLOAD;
 
-    // console.log("altervotes: ", data);
+    console.log("altervotes: ", data);
 
     var avsettings = {
-      url: 'api/coaches/round48',
+      url: 'api/coach/round48.json',
       type: 'GET',
       dataType: 'json',
       data: {
@@ -690,20 +695,36 @@ jQuery(document).ready(function($){
       }, 
       cache: false,
       success: function(rdata){
-        //console.log("total", data);
-        //console.log('round48: ', rdata);
+        console.log("total", data.coaches);
+        console.log('round48: ', rdata);
+
+        var whole = data.coaches;
+
+        console.log("whole: ", whole);
         
-        $.each(data, function(c) {
-          // console.log("total each: ", c);
-          $.each(rdata, function(rc) {
-            if (data[c]._id == rdata[rc].coachId) {
-              // console.log("match!");
-              data[c].totalVotes = data[c].totalVotes - rdata[rc].totalVotes;
-              // console.log("data votes: " + data[c].totalVotes);
+        $.each(whole, function(c, cvalue) {
+          // console.log("total each: ", cvalue);
+          $.each(rdata, function(rc, rcvalue) {
+            // console.log("total: ", c);
+            // console.log("full: " + cvalue._id + ", new: " + rcvalue.coachId);
+
+            // if (cvalue._id == rcvalue.coachId) {
+            //   console.log("found match: " + cvalue.slug);
+            // } else {
+            //   console.log(cvalue.slug + " not on ballot");
+            // }
+
+            if (cvalue._id == rcvalue.coachId) {
+              cvalue.totalVotes = cvalue.totalVotes - rcvalue.totalVotes;
+              console.log("found match: " + cvalue.slug);
             }
-            // console.log("r48 each: ", rc);
           });
+          // console.log("end outside each");
         });
+        console.log("whole edit: ", whole);
+        console.log("data.coaches: ", data.coaches);
+        $(document).trigger({ type:'ballotloaded', ballot: data });
+        $(document).trigger({ type:'coachesloaded', coaches: data.coaches, ballotId: data._id });
       },
       error: function(jqXhr, textStatus, errorThrown){
         return debug.error('Error loading ballot [' + textStatus + ']: ' + errorThrown);
