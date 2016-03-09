@@ -78,7 +78,9 @@ jQuery(document).ready(function($){
   options['listjs']['thanks-content-container'] = {
     valueNames: ['sort-name-coach', 'sort-name-school', 'sort-name-charity', 'sort-ranking', 'sort-result']
   };
-  
+  options['listjs']['winner-content-container'] = {
+    valueNames: ['sort-name-coach', 'sort-name-school', 'sort-name-charity', 'sort-ranking', 'sort-result']
+  };
   // iosSlider Options
   options['iosSlider'] = {
     keyboardControls: true,
@@ -334,7 +336,11 @@ jQuery(document).ready(function($){
       }
       $('.thanks-content .display-name-coach').html(coach.name.first + ' ' + coach.name.last);
       $('.thanks-content .display-ranking').html(ranking.ordinalize());
-    }  
+    }   
+    if ($('body').hasClass('info') && $('body').attr('id') == 'winner'){
+      $template = renderCoaches('#winner-content-container', filterActive(_coaches));
+    }
+
     
     return $(document).trigger({ type: 'coachesrendered' });
   });  
@@ -351,6 +357,7 @@ jQuery(document).ready(function($){
     new List('desktop-content-container', options['listjs']['desktop-content-container']);
     new List('phone-content-container', options['listjs']['phone-content-container']);
     new List('thanks-content-container', options['listjs']['thanks-content-container']);
+    new List('winner-content-container', options['listjs']['winner-content-container']);
     //lists.push(new List('desktop-content-container', options['listjs']['desktop-content-container']));
     //lists.push(new List('phone-content-container', options['listjs']['phone-content-container']));
     addBallotEventListeners();
