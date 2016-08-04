@@ -1,0 +1,10 @@
+iccc-admin-test
+mongodb://heroku:gwSwwwgPNAfNt55hQ70DLN5ByOy11y8meW4l66dwf3PF1YwWMu20yDApgvWp6lHXl1JWeXjgauk3oHxg6x9Swg@dogen.mongohq.com:10024/app31310579
+
+iccc-admin
+mongodb://heroku:nYPC6BZ44ekKKgYndW2LEzcjrFI4omDhp7FrmOj01K7F5s1Ts22Ds8KElL1tC1fh-c12mG6Y81Rt5Smr1gQZkA@kahana.mongohq.com:10071/app29932936
+
+
+mongodump --host kahana.mongohq.com --port 10071 --db app29932936 -u heroku -p "nYPC6BZ44ekKKgYndW2LEzcjrFI4omDhp7FrmOj01K7F5s1Ts22Ds8KElL1tC1fh-c12mG6Y81Rt5Smr1gQZkA" -o ~/Desktop/mongo-dump/for-iccc-test
+
+mongorestore --host dogen.mongohq.com --port 10024 --db app31310579 --username heroku --password "gwSwwwgPNAfNt55hQ70DLN5ByOy11y8meW4l66dwf3PF1YwWMu20yDApgvWp6lHXl1JWeXjgauk3oHxg6x9Swg" ~/Desktop/mongo-dump/for-iccc-test/app29932936

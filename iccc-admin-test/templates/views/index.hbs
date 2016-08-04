@@ -1,0 +1,18 @@
+{{!< default}}
+<div class="container">
+	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+		<div class="jumbotron">
+			{{#if user}}
+		  <h1>Welcome <span>{{user.name.full}}</span>!</h1>
+		  <p class="lead">Hope this helps with managing these updates.</p>
+		  <p class="text-center"><a class="btn btn-lg btn-success" href="/keystone">View Content</a></p>
+			{{else}}
+			<h1>Welcome!</h1>
+			<p class="lead">You need to be signed in to access this tool.</p>
+			<p class="text-center">
+				<a class="btn btn-lg btn-success" href="/keystone/signin">Signin</a>
+			</p>
+			{{/if}}
+	</div>
+	</div>
+</div>
