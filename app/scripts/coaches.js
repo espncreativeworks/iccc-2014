@@ -78,9 +78,7 @@ jQuery(document).ready(function($){
   options['listjs']['thanks-content-container'] = {
     valueNames: ['sort-name-coach', 'sort-name-school', 'sort-name-charity', 'sort-ranking', 'sort-result']
   };
-  options['listjs']['winner-content-container'] = {
-    valueNames: ['sort-name-coach', 'sort-name-school', 'sort-name-charity', 'sort-ranking', 'sort-result']
-  };
+
   // iosSlider Options
   options['iosSlider'] = {
     keyboardControls: true,
@@ -194,6 +192,8 @@ jQuery(document).ready(function($){
     e.preventDefault();
     if (!$(this).parents('.card').hasClass('flipped')){
       $('.ballot .card').removeClass('flipped');
+      $('.winner-item-container .card').removeClass('flipped');
+
       $(this).parents('.card').toggleClass('flipped');
     } else {
       $(this).parents('.card').removeClass('flipped');
@@ -306,9 +306,10 @@ jQuery(document).ready(function($){
   }); 
   
   $(document).on('coachesloaded', function(evt){
+
     var _coaches, $template, coach, ranking;
 
-    // console.log("coaches loaded: ", evt.coaches);
+    //console.log("coaches loaded: ", evt.coaches);
 
     _coaches = window.coaches = addRankings(evt.coaches);
     
@@ -328,7 +329,7 @@ jQuery(document).ready(function($){
       $template = renderCoaches('#phone-content-container .ballot-item-container.template', filterActive(_coaches));
     }
     
-    if ($('body').hasClass('info') && $('body').attr('id') !== 'leaderboard'){
+    if ($('body').hasClass('info') && $('body').attr('id') !== 'leaderboard' && $('body').attr('id') !== 'winner'){
       coach = getCurrentCoach();
       ranking = getCurrentCoachRanking();
       if ($('.thanks-content .thanks-item-container.template').length > 0){
@@ -337,9 +338,22 @@ jQuery(document).ready(function($){
       $('.thanks-content .display-name-coach').html(coach.name.first + ' ' + coach.name.last);
       $('.thanks-content .display-ranking').html(ranking.ordinalize());
     }   
-    if ($('body').hasClass('info') && $('body').attr('id') == 'winner'){
-      $template = renderCoaches('#winner-content-container', filterActive(_coaches));
-    }
+
+    if ($('body').attr('id') === 'winner'){
+      initWinnerSharing();
+      if (window.ballot.coaches.length > 1) {
+        coach = window.ballot.coaches[3];
+      } else {
+        coach = window.ballot.coaches[0];
+      }
+      if ($('.winner-content .winner-item-container.template').length > 0){
+        $template = renderCoaches('.winner-content .winner-item-container.template', [coach]);  
+      }
+      $('.winner-content .display-name-coach').html(coach.name.first + ' ' + coach.name.last);
+      $('.winner-content .display-name-last').html(coach.name.last);
+
+      $('#winner-content-container').on('click', '[data-control-action="toggle-view"]', ontoggleview);
+    } 
 
     
     return $(document).trigger({ type: 'coachesrendered' });
@@ -351,13 +365,16 @@ jQuery(document).ready(function($){
     if ($('#desktop-content-container .eliminated.ballot-item-container.template').length > 0){
       $template = renderCoaches('#desktop-content-container .eliminated.ballot-item-container.template', filterInactive(_coaches));
     }
+
+    if ($('body').attr('id') === 'winner'){
+      initWinnerSharing();
+    } 
   });  
   
   $(document).on('coachesrendered', function(){
     new List('desktop-content-container', options['listjs']['desktop-content-container']);
     new List('phone-content-container', options['listjs']['phone-content-container']);
     new List('thanks-content-container', options['listjs']['thanks-content-container']);
-    new List('winner-content-container', options['listjs']['winner-content-container']);
     //lists.push(new List('desktop-content-container', options['listjs']['desktop-content-container']));
     //lists.push(new List('phone-content-container', options['listjs']['phone-content-container']));
     addBallotEventListeners();
@@ -372,7 +389,7 @@ jQuery(document).ready(function($){
   });
   
   function addBallotEventListeners(){
-    $('.ballot, body.info').on('click', '[data-control-action="toggle-view"]', ontoggleview);
+    $('.ballot, body.info, body#winner').on('click', '[data-control-action="toggle-view"]', ontoggleview);
     $('.ballot').on('click', '[data-control-action="toggle-favorite"]', ontogglefavorite);
     $('.ballot').on('click', '[data-control-action="submit-vote"]', onvote);
     $('.ballot').on('click', '[data-control-action="submit-login"]', onvote);
@@ -406,7 +423,51 @@ jQuery(document).ready(function($){
     
     $('body#thanks .social-share-container .twitter').first().attr('href', twttrBaseUrl + twttrText);
   }
+
+
+  function initWinnerSharing(){
+    var coach = window.ballot.coaches[0]
+    , fbLink = window.location.uri.scheme() + '://' + window.location.uri.hostname() + window.location.uri.directory() + '/' 
+    , twttrBaseUrl = 'https://twitter.com/intent/tweet?source=webclient&text='
+    , coachLabel = coach.twitterName ? '@' + coach.twitterName : 'Coach ' + coach.name.last
+    , twttrText = 'Congratulations ' + coachLabel + ' for winning the Infiniti Coaches\' Charity Challenge! Visit now http://espn.com/infiniti'
+    , overrides = {}
+    , settings = {};
+    
+    overrides = {
+      link: fbLink,
+      name: 'Congratulations to Coach ' + coach.name.last,
+      picture: coach.headshot.url,
+      description: 'Congratulations to Coach ' + coach.name.last + ' for winning Infiniti Coaches\' Charity Challenge! Visit http://espn.com/infiniti to view his favorite charity!'
+    };
+    
+    social.fb.opts = $.extend(settings, social.fb.opts, overrides);
+    
+    $('#winner .visible-xs li.social .facebook .fa-circle, #winner .hidden-xs li.social .facebook .fa-circle').on('click', function(e){
+      e.preventDefault();
+      if (Modernizr.touch){
+        ga('send', 'event', 'Social', 'FB Winner- '+ coach.name.last, 'Mobile');
+      } else {
+        ga('send', 'event', 'Social', 'FB Winner- '+ coach.name.last, 'Desktop');
+      }
+      return FB.ui(social.fb.opts, social.fb.callback);
+    });
+    
+    twttrText = encodeURIComponent(twttrText);
+    
+    $('#winner .visible-xs li.social .twitter').first().attr('href', twttrBaseUrl + twttrText);
+    $('#winner .hidden-xs li.social .twitter').first().attr('href', twttrBaseUrl + twttrText);
   
+    $('#winner .visible-xs li.social .twitter .fa-circle, #winner .hidden-xs li.social .twitter .fa-circle').on('click',function(e) {
+        if (Modernizr.touch){
+          ga('send', 'event', 'Social', 'TW Winner- '+ coach.name.last, 'Mobile');
+        } else {
+          ga('send', 'event', 'Social', 'TW Winner- '+ coach.name.last, 'Desktop');
+        }
+    });
+  }
+
+
   function animateProgress(){
     $('.votes .progress').each(function(){
       var pct = $(this).attr('data-progress') + '%';
@@ -633,6 +694,7 @@ jQuery(document).ready(function($){
       $itemContainer.find('.sort-ranking').text(ranking);
       $itemContainer.find('.biography-container .biography p').text(item.charity.description);
       $itemContainer.find('.display-name-coach').text(item.name.first + ' ' + item.name.last);
+      $itemContainer.find('.display-name-last').text(item.name.last);
       $itemContainer.find('.display-name-school').text(item.school.name);
       $itemContainer.find('.display-name-charity').text(item.charity.name);
       $itemContainer.find('.sort-name-coach').text(item.name.last);

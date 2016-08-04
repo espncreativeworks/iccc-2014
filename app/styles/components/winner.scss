@@ -1,0 +1,426 @@
+$coach-name-font-family: $ccc-meta-pro-bold-font-family;
+$charity-name-font-family: $ccc-meta-pro-bold-font-family;
+$school-name-font-family: $ccc-meta-pro-bold-font-family;
+$money-progress-height: 18px;
+$vote-progress-height: 18px;
+$star-default-color: $ccc-primary;
+$star-selected-color: #caa45f;
+
+
+#winner-content-container.container {
+  background: $ccc-white;
+  min-height: 320px;	
+}
+
+.winner-content {
+  text-align: center;
+  
+  .social-share-container {    
+    padding: 14px 0;
+    
+    .social-share-message {
+      width: 255px;
+      height: 28px;
+      line-height: 28px;
+      margin-bottom: 0px;
+      text-transform: uppercase;
+    }
+    
+    .copy,
+    .social,
+    .separator {
+      display: inline-block;
+      float: left;
+    }
+    
+    .copy {
+      margin-left: 6px;
+      margin-right: 12px;
+    }
+    
+    .social {
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .social.facebook {
+      width: 14px;
+      height: 28px;
+      background-image: url($image-path + 'icon_facebook_dark.png'); 
+    }
+    
+    .social.twitter {
+      width: 30px;
+      height: 24px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+      background-image: url($image-path + 'icon_twitter_dark.png'); 
+    }
+    
+    .separator {
+      width: 2px;
+      height: 28px;
+      margin: 0px 14px;
+      border-right: 1px solid $ccc-primary;
+    }
+  }
+  
+  .winner-item-container {
+    padding-left: 0px;
+    padding-right: 0px;
+    
+    &, * {
+      -webkit-transform: translateZ(0);
+    }
+
+    .winner-item {
+      display: block;
+      float: none;
+      width: 100%;
+      height: 286px;
+      margin: 10px auto;
+      //border: 1px solid $ccc-primary;
+      //@include border-radius(3px);
+
+      @media (max-width: $screen-xs-max){
+        width: 176px;
+        height: 286px;
+      }
+    
+      & > .row {
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+  }
+  
+  .card-container {
+    position: relative;
+    display: block !important;
+    height: 141px;
+    padding: 0;
+    @include perspective(800px);
+    
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      @include transition(transform 400ms);
+      @include transform-origin(right center);
+      @include transform-style(preserve-3d);
+      
+      &.flipped {
+        @include flip();
+
+        
+        .front .card-controls {
+          visibility: hidden;
+        }
+      }
+      
+      .front,
+      .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black; 
+        @include backface-visibility(hidden);
+      }
+      
+      .back {
+        @include rotateY(180deg);
+      }
+    }
+    
+    .card-controls {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      font-size: 14px;
+      z-index: 100;
+      
+      .control-container {
+        padding: 3px 5px;
+      }
+    }
+    
+    .card-control {
+      color: $ccc-primary;
+      
+      &:hover,
+      &:active
+      &.active {
+        color: $ccc-white;
+      }
+    }
+    
+    .front {
+      .card-control {
+        color: $ccc-primary;
+        
+        &:hover,
+        &:active
+        &.active {
+          color: $ccc-white;
+        }
+      }
+    }
+    
+    .back {
+      .card-control {
+        color: $ccc-white;
+        
+        &:hover,
+        &:active
+        &.active {
+          color: $ccc-light-grey;
+        }
+      }
+    }
+  }
+  
+  .thumbnail-container {
+    height: inherit;
+    padding: 0px; 
+    background-color: $ccc-grey;
+    background-image: url($image-path + 'bg_thumbnail.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    //@include gradient-radial($ccc-body-gradient-end, $ccc-body-gradient-start);
+    
+    .thumbnail {
+      float: left;
+      width: 100%;
+      height: inherit;
+      margin: 0px;
+      padding: 0px; 
+      border: none;
+      background-color: transparent;
+      @include border-radius(0px);
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
+  }
+  
+  .biography-container {
+    height: inherit;
+    background-color: black;
+    
+    .biography {
+      float: left;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 12px 3px;
+      color: white;
+      font-size: 12px;  
+      text-align: left;
+    
+      p {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      } 
+    }
+  }
+  
+  .visualization-container {
+    height: 22px;
+    padding: 2px 0px;
+    line-height: inherit;
+    background-color: $ccc-white;
+    //border-top: 1px solid $ccc-primary;
+    //border-bottom: 1px solid $ccc-primary;
+    
+    .progress-container {
+      float: left;
+      width: 100%;
+      background-color: $ccc-light-grey;
+      min-height: 0px;
+      -webkit-transform: none;
+      
+      * {
+        -webkit-transform: inherit;
+      }
+      
+      .progress {
+        float: left;
+        width: 0%;
+        height: inherit;
+        margin: 0px;
+        background-color: $ccc-primary;
+        line-height: inherit;
+        font-size: inherit;
+        @include border-radius(0px);
+        
+        .progress-label {
+          display: inline-block;
+          float: right;
+          padding: 0px;
+          margin: 0px 3px 0px 0px;
+          font-size: inherit;
+          line-height: inherit;
+          color: inherit;
+          @include opacity(1.0);
+          &.visible { @include opacity(1.0); }
+        }
+      }
+      
+      &.money {
+        display: none;
+        height: $money-progress-height;
+        line-height: $money-progress-height;
+        font-size: 8px;
+        color: $ccc-white;
+        border-bottom: 1px solid $ccc-primary;
+        
+        .progress {
+          height: $money-progress-height - 1;
+          background-color: $ccc-accent;
+          
+          .progress-label {
+            display: none;
+          }
+        }
+      }
+      
+      &.votes {
+        height: $vote-progress-height;
+        line-height: $vote-progress-height;
+        font-size: 9px;
+        color: $ccc-white;
+        
+        .progress {
+          height: $vote-progress-height;
+          background-color: $ccc-primary;
+        }
+      }
+    
+    }
+  }
+  
+  .info-container {
+    height: 85px;
+    padding-top: 10px;
+    
+    & > .row {
+      margin: 0px;
+    }
+
+    .top-info {
+      height: 25px;
+    }
+    
+    .display-name {
+      margin: 0px;
+      padding-left: 8px;
+      padding-right: 8px;
+      background-color: $ccc-white;
+      font-style: normal;
+      
+      /*
+      &.sorted-by {
+        font-style: italic;
+        color: darken($ccc-accent, 15%);
+      }
+      */
+      
+      & > .coach,
+      & > .school,
+      & > .charity {
+        display: block;
+        width: 100%;
+        margin: 0px;
+        line-height: 10px;
+        font-size: 15px;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: $ccc-meta-pro-bold-font-family;
+      }
+      
+      & > .coach {
+        line-height: 35px;
+
+        @media (max-width: $screen-sm-max){
+          font-size: 12px;
+          line-height: 1;
+        }
+
+        @media (max-width: $screen-xs-max){
+          font-size: 11px;
+        }
+      }
+      
+      & > .school {
+        font-size: 10px;
+        padding-bottom: 2px;
+      }
+      
+      & > .charity {
+        font-size: 10px;
+
+        @media (max-width: $screen-xs-max){
+          width: 80%;
+        }
+      }
+      
+      .personalization-control {
+        display: none;
+        position: absolute; 
+        top: 0px; 
+        right: 0px; 
+        width: 25px; 
+        height: 25px; 
+        line-height: 25px; 
+        font-size: 12px; 
+        text-align: center; 
+        color: $star-default-color;
+        text-decoration: none;
+        
+        .star {
+          display: none;
+          line-height: inherit;
+          top: 0px;
+        }
+                
+        .star.default {
+          display: inline-block;
+        }  
+        
+        &:hover,
+        &:active
+        &.active {
+          color: $star-default-color;
+          text-decoration: none;
+          
+          .star.default {
+            display: none;
+          }  
+          
+          .star.enabled {
+            display: inline-block;
+          }
+        }
+        
+        &.selected {
+          color: $star-selected-color;
+          
+          .star.default {
+            display: none;
+          } 
+          
+          .star.enabled {
+            display: inline-block;
+          }
+        }
+      }
+    }
+    
+    .text-hide {
+      display: none;
+    }
+  }
+}
